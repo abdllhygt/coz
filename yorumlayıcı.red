@@ -15,8 +15,8 @@ do %cozut.red
 tara: func [gelen][
   parse gelen [
     any [
-      !işlev (çöz -paketdön)
-      | !değişkenatama (çöz -paketdön)
+      !değişkenatama (çöz -paketdön)
+      | !işlev (!son çöz -paketdön)
       | !isetek
       | !saytek
       | !son

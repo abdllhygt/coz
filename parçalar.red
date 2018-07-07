@@ -68,8 +68,7 @@ do %işlem.red
     | !işlem
     | copy -dön !sayı
   ] !yaboş
-  "yaz" (-paketdön: (paketle/işlev "yaz" -dön)) !yaboş
-  !son
+  "yaz" (-paketdön: (paketle/işlev "yaz" -dön))
 ]
 
 !değişkenler: [
