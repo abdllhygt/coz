@@ -1,11 +1,16 @@
 Red [
+<<<<<<< HEAD
     Title:   "COZ"
+=======
+  Title:   "COZ"
+>>>>>>> 0.0.3
 	Author:  "Abdullah Yiğiterol"
 	License: {
 		Şuan yok
 	}
 ]
 
+<<<<<<< HEAD
 #include %environment/console/input.red
 do %anahtarlar.red
 
@@ -28,4 +33,11 @@ either system/options/args [
             | skip
         ]
     ]
+=======
+either system/options/args/1 [
+    gelen: read rejoin[%./ system/options/args/1]
+    do %yorumlayıcı.red
+][
+  do %kabuk.red
+>>>>>>> 0.0.3
 ]
