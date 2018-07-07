@@ -20,8 +20,7 @@ print {
 
 tara: func [gelen][
   parse gelen [
-    !kapatma
-    | !değişkenatama (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
+    !değişkenatama (çöz -paketdön print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
     | !işlev (çöz -paketdön)
     | !isetek
     | !saytek
