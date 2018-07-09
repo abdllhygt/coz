@@ -20,12 +20,19 @@ print {
 
 tara: func [gelen][
   parse gelen [
-    !değişkenatama (çöz -paketdön print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
+    !kapatma
+    | !hepsi (çöz -paketdön)
+    | copy -değer !değişken end (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" değişkenkon -değer "^[[0m"])
+    | copy -dön !metin end (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
+    | copy -dön !sayı end (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
+    | !değişkenatama (çöz -paketdön print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
     | !işlev (çöz -paketdön)
     | !isetek
     | !saytek
-    | !karşılaştırma (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
-    | !işlem (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
+    | !karşılaştırma !son (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
+    | !işlem !son (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
+    | !son
+    | (hataver/sözdizimi)
   ]
 ]
 while [true][

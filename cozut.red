@@ -26,7 +26,15 @@ hataver: context[
   büyükküçüksayıolmalı: func [][
     print ""
     print "COZUTTU!"
-    print rejoin[isim " büyük/küçük karşılaştırmaları sayı üzerinden yapılır!"]
+    print rejoin["Büyük/küçük karşılaştırmaları sayı üzerinden yapılır!"]
+    print ""
+    quit
+  ]
+
+  sözdizimi: func [][
+    print ""
+    print "COZUTTU!"
+    print rejoin["Söz dizimi hatası"]
     print ""
     quit
   ]

@@ -48,6 +48,18 @@ değişkendön: func[isim /local -sayı][
   ]
 ]
 
+değişkenkon: func[isim /local -sayı][
+  either (değişkenvarmı isim) [
+    -sayı: index? (find değişkenisim isim)
+    if (type? değişkendeğer/(-sayı)) = string! [
+      return rejoin[{"} değişkendeğer/(-sayı) {"}]
+    ]
+    return değişkendeğer/(-sayı)
+  ][
+    return false
+  ]
+]
+
 değişkensayımı: func [isim /local -sayı][
   either (değişkenvarmı isim) [
     -sayı: index? (find değişkenisim isim)

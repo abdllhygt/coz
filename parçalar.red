@@ -6,8 +6,9 @@ Red [
 	}
 ]
 
-!boş: [opt space]
-!yaboş: [any space]
+!boş: [some [space | tab]]
+!yaboş: [any [space | tab]]
+!tab: [tab]
 !son: [any space [newline | end ]]
 küçükharf: charset "abcçdefgğhıijklmnoöprsştuüvyzwxqé"
 büyükharf: charset "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZWXQÉ"
@@ -19,13 +20,15 @@ nokta: "."
 !sayı: [ "0" | [numara any rakam any[nokta rakam]] ]
 !metin: [{"} any hepsi {"}]
 !liste: ["[" !yaboş [!metin | !sayı] !yaboş any ["," !yaboş [!metin | !sayı] ] !yaboş "]"]
-!değişken: [harf any [harf | !sayı]]
+!değişken: [":" harf any [harf | !sayı]]
+!nsdeğişken: [harf any [harf | !sayı]]
 
 
 do %karşılaştırma.red
 do %işlem.red
 
-!değişkenatama: [copy -atan1 !değişken !yaboş ":" !yaboş
+!değişkenatama: [copy -atan1 !nsdeğişken !yaboş ":" !yaboş
+  (-atan1: rejoin[":" -atan1] -paketdön: copy [])
   [
     !işlem (
       -paketdön: (paketle/değişkenata -atan1 -dön)
@@ -56,30 +59,32 @@ do %işlem.red
 ]
 
 !yaz: [
-  [
-    copy -değişken !değişken (
+  [ (-paketdön: copy [])
+    copy -dön !metin (-dön: do -dön)
+    | copy -dön !sayı
+    | !işlem
+    | copy -değişken !değişken (
       either (değişkenvarmı -değişken)[
         -dön: değişkendön -değişken
       ][
         hataver/değişkenyok -değişken
       ]
     )
-    | copy -dön !metin (-dön: do -dön)
-    | !işlem
-    | copy -dön !sayı
-  ] !yaboş
+  ]  !yaboş
   "yaz" (-paketdön: (paketle/işlev "yaz" -dön))
+  !son
 ]
 
-!değişkenler: [
+!hepsi: [
   "@"
   !son
   (
     -paketdön: (paketle/işlev "@" [])
   )
 ]
+
 !işlev: [
-   !kapatma | !değişkenler | !yaz
+    !yaz
 ]
 
 !karşılaştırma: [
@@ -98,10 +103,37 @@ do %işlem.red
   )
 ]
 
+!ise: [
+  !karşılaştırma !boş "ise" !yaboş "{"
+  [if (-dön = "yanlış")
+    thru "}"
+    | any [
+        !hepsi (çöz -paketdön)
+        | !değişkenatama (çöz -paketdön)
+        | !işlev (çöz -paketdön)
+        | !isetek
+        | !saytek
+        | !tab
+        | !son
+        | !boş
+    ] "}"
+  ]
+]
+
 !saytek: [
-  copy -sayı !sayı !boş "say" !boş [!işlev | !değişkenatama] !son
+  [
+    copy -miktar !sayı
+    | copy -miktar !değişken (
+      either (değişkensayımı -miktar)[
+        -miktar: değişkendön -miktar
+      ][
+        -miktar: 0
+      ]
+    )
+  ]
+  !boş "say" !boş [!işlev | !değişkenatama] !son
   (
-    repeat i (to integer! -sayı)[
+    repeat i (to integer! -miktar)[
       çöz -paketdön
     ]
   )

@@ -1,16 +1,18 @@
 Red[]
 
-!işlem: [
+!işlem: [ (hata: copy [] -şey: copy "")
     [
       copy -şey !sayı
       | copy -değişken !değişken (
         unless değişkenvarmı -değişken [
-          hataver/değişkenyok -değişken
+          append hata "var"
+          append hata -değişken
         ]
         either değişkensayımı -değişken [
           -şey: to string! (değişkendön -değişken)
         ][
-          hataver/değişkensayıdeğil -değişken
+          append hata "var"
+          append hata -değişken
         ]
       )
     ]
@@ -61,6 +63,7 @@ Red[]
       (append -işlem -şey)
     ]
     (
+      if (length? hata) > 1 [hataver/değişkensayıdeğil hata/2]
       -işlem: copy replace/all -işlem "+" " + "
       -işlem: copy replace/all -işlem "-" " - "
       -işlem: copy replace/all -işlem "*" " * "
