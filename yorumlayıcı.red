@@ -24,7 +24,8 @@ tara: func [gelen][
       | !işlev (çöz -paketdön)
       | !ise
       | !isetek
-      | !saytek
+      | !kere
+      | !keretek
       | !karşılaştırma !son
       | !işlem !son
       | !son

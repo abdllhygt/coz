@@ -14,7 +14,7 @@ do %cozut.red
 
 print {
   Coz Programlama Dili
-  0.0.3
+  0.0.4
 
 }
 
@@ -28,7 +28,7 @@ tara: func [gelen][
     | !değişkenatama (çöz -paketdön print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
     | !işlev (çöz -paketdön)
     | !isetek
-    | !saytek
+    | !keretek
     | !karşılaştırma !son (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
     | !işlem !son (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
     | !son

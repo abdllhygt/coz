@@ -20,7 +20,7 @@ nokta: "."
 !sayı: [ "0" | [numara any rakam any[nokta rakam]] ]
 !metin: [{"} any hepsi {"}]
 !liste: ["[" !yaboş [!metin | !sayı] !yaboş any ["," !yaboş [!metin | !sayı] ] !yaboş "]"]
-!değişken: [":" harf any [harf | !sayı]]
+!değişken: [harf any [harf | !sayı]]
 !nsdeğişken: [harf any [harf | !sayı]]
 
 
@@ -28,7 +28,7 @@ do %karşılaştırma.red
 do %işlem.red
 
 !değişkenatama: [copy -atan1 !nsdeğişken !yaboş ":" !yaboş
-  (-atan1: rejoin[":" -atan1] -paketdön: copy [])
+  (-atan1: rejoin[-atan1] -paketdön: copy [])
   [
     !işlem (
       -paketdön: (paketle/değişkenata -atan1 -dön)
@@ -72,7 +72,6 @@ do %işlem.red
     )
   ]  !yaboş
   "yaz" (-paketdön: (paketle/işlev "yaz" -dön))
-  !son
 ]
 
 !hepsi: [
@@ -96,7 +95,7 @@ do %işlem.red
 
 !isetek: [
   !karşılaştırma !boş "ise" !boş
-  [if (-dön = "doğru") [!işlev | !değişkenatama] | ]
+  [if (-dön = "doğru") [ !kapatma | !işlev | !değişkenatama] | ]
   !son
   (
     çöz -paketdön
@@ -108,11 +107,12 @@ do %işlem.red
   [if (-dön = "yanlış")
     thru "}"
     | any [
-        !hepsi (çöz -paketdön)
+        !kapatma
+        | !hepsi (çöz -paketdön)
         | !değişkenatama (çöz -paketdön)
         | !işlev (çöz -paketdön)
         | !isetek
-        | !saytek
+        | !keretek
         | !tab
         | !son
         | !boş
@@ -120,7 +120,7 @@ do %işlem.red
   ]
 ]
 
-!saytek: [
+!keretek: [
   [
     copy -miktar !sayı
     | copy -miktar !değişken (
@@ -131,10 +131,42 @@ do %işlem.red
       ]
     )
   ]
-  !boş "say" !boş [!işlev | !değişkenatama] !son
+  !boş "kere" !boş [!kapatma | !hepsi | !işlev | !değişkenatama] !son
   (
     repeat i (to integer! -miktar)[
       çöz -paketdön
+    ]
+  )
+]
+
+!kere: [
+  [
+    copy -miktar !sayı
+    | copy -miktar !değişken (
+      either (değişkensayımı -miktar)[
+        -miktar: değişkendön -miktar
+      ][
+        -miktar: 0
+      ]
+    )
+  ]
+  !boş "kere" !yaboş "{"
+  (-paketler: copy [])
+  any [
+    !kapatma
+    | !hepsi (append/only -paketler -paketdön)
+    | !değişkenatama (append/only -paketler -paketdön)
+    | !işlev (append/only -paketler -paketdön)
+    | !tab
+    | !son
+    | !boş
+  ]
+  "}"
+  (
+    repeat i (to integer! -miktar)[
+      foreach p -paketler [
+        çöz p
+      ]
     ]
   )
 ]

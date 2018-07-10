@@ -56,7 +56,7 @@ değişkenkon: func[isim /local -sayı][
     ]
     return değişkendeğer/(-sayı)
   ][
-    return false
+    return "yok"
   ]
 ]
 
