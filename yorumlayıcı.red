@@ -15,11 +15,8 @@ do %cozut.red
 tara: func [gelen][
   parse gelen [
     any [
-      !kapatma
+      !kapatma (çöz -paketdön)
       | !hepsi (çöz -paketdön)
-      | !değişken !son
-      | !metin !son
-      | !sayı !son
       | !değişkenatama (çöz -paketdön)
       | !işlev (çöz -paketdön)
       | !ise
@@ -30,6 +27,9 @@ tara: func [gelen][
       | !işlem !son
       | !son
       | !boş
+      | !değişken !son
+      | !metin !son
+      | !sayı !son
     ]
   ]
 ]

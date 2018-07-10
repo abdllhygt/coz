@@ -19,16 +19,38 @@ değişkenvarmı: func[isim][
 değişkenata: func[isim değer /local -sayı][
   either (değişkenvarmı isim) [
     -sayı: index? (find değişkenisim isim)
-    değişkendeğer/(-sayı): (do değer)
+    either (find değer {"}) [
+      değer: replace değer {"} ""
+      değişkendeğer/(-sayı): (math load değer)
+    ][
+      değişkendeğer/(-sayı): (do değer)
+    ]
   ][
     append/only değişkenisim isim
-    append/only değişkendeğer (do değer)
+    either (find değer {"}) [
+      değer: replace değer {"} ""
+      append/only değişkendeğer (math load değer)
+    ][
+      append/only değişkendeğer (do değer)
+    ]
   ]
 ]
 
-işlev: func [isim değer][
+işlev: func [isim değer /local -sayı][
   switch isim [
-    "yaz" [print değer]
+    "yaz" [
+      either (type? değer) = word![
+        -sayı: index? (find değişkenisim (to string! değer))
+        print değişkendeğer/(-sayı)
+      ][
+        either (find değer {"})[
+          değer: replace değer {"} ""
+          print (math load değer)
+        ][
+          print değer
+        ]
+      ]
+    ]
     "@" [
       foreach i değişkenisim [
         print rejoin[i ": " (değişkendön i)]
@@ -36,6 +58,7 @@ işlev: func [isim değer][
       probe değişkenisim
       probe değişkendeğer
     ]
+    "kapat" [quit]
   ]
 ]
 

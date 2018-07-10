@@ -9,7 +9,7 @@ Red[]
           append hata -değişken
         ]
         either değişkensayımı -değişken [
-          -şey: to string! (değişkendön -değişken)
+          -şey: rejoin['değişkendeğer "/" (index? (find değişkenisim -değişken))]
         ][
           append hata "var"
           append hata -değişken
@@ -20,7 +20,7 @@ Red[]
       copy -şey "+"
       | copy -şey "-"
       | copy -şey "*"
-      | copy -şey "/"
+      | copy -şey "/" (-şey: " / ")
     ] (
       append -işlem -şey
     )
@@ -32,7 +32,7 @@ Red[]
           hataver/değişkenyok -değişken
         ]
         either değişkensayımı -değişken [
-          -şey: (değişkendön -değişken)
+          -şey: rejoin['değişkendeğer "/" (index? (find değişkenisim -değişken))]
         ][
           hataver/değişkensayıdeğil -değişken
         ]
@@ -44,7 +44,7 @@ Red[]
         copy -şey "+"
         | copy -şey "-"
         | copy -şey "*"
-        | copy -şey "/"
+        | copy -şey "/" (-şey: " / ")
       ] (append -işlem -şey)
       !yaboş
       [
@@ -54,7 +54,7 @@ Red[]
             hataver/değişkenyok -değişken
           ]
           either değişkensayımı -değişken [
-            -şey: (değişkendön -değişken)
+            -şey: rejoin['değişkendeğer "/" (index? (find değişkenisim -değişken))]
           ][
             hataver/değişkensayıdeğil -değişken
           ]
@@ -67,7 +67,6 @@ Red[]
       -işlem: copy replace/all -işlem "+" " + "
       -işlem: copy replace/all -işlem "-" " - "
       -işlem: copy replace/all -işlem "*" " * "
-      -işlem: copy replace/all -işlem "/" " / "
-      -dön: math load -işlem
+      -dön: rejoin[{"}-işlem]
     )
 ]

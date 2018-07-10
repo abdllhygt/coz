@@ -55,7 +55,7 @@ do %işlem.red
     )
   ] !yaboş
   !son
-  (-dön: -atan2)
+  (-paketdön: (paketle/değişkenata -atan1 -atan2))
 ]
 
 !yaz: [
@@ -65,7 +65,7 @@ do %işlem.red
     | !işlem
     | copy -değişken !değişken (
       either (değişkenvarmı -değişken)[
-        -dön: değişkendön -değişken
+        -dön: to word! -değişken
       ][
         hataver/değişkenyok -değişken
       ]
@@ -107,7 +107,7 @@ do %işlem.red
   [if (-dön = "yanlış")
     thru "}"
     | any [
-        !kapatma
+        !kapatma (çöz -paketdön)
         | !hepsi (çöz -paketdön)
         | !değişkenatama (çöz -paketdön)
         | !işlev (çöz -paketdön)
@@ -153,7 +153,7 @@ do %işlem.red
   !boş "kere" !yaboş "{"
   (-paketler: copy [])
   any [
-    !kapatma
+    !kapatma (append/only -paketler -paketdön)
     | !hepsi (append/only -paketler -paketdön)
     | !değişkenatama (append/only -paketler -paketdön)
     | !işlev (append/only -paketler -paketdön)
@@ -171,4 +171,4 @@ do %işlem.red
   )
 ]
 
-!kapatma: ["kapat" !yaboş !son (quit)]
+!kapatma: ["kapat" (-paketdön: (paketle/işlev "kapat" []))]
