@@ -6,11 +6,11 @@ Red [
 	}
 ]
 
-do %paketle.red
-do %çöz.red
-do %bellek.red
-do %parçalar.red
-do %cozut.red
+#include %paketle.red
+#include %çöz.red
+#include %bellek.red
+#include %parçalar.red
+#include %cozut.red
 
 tara: func [gelen][
   parse gelen [

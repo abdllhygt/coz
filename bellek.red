@@ -19,17 +19,19 @@ değişkenvarmı: func[isim][
 değişkenata: func[isim değer /local -sayı][
   either (değişkenvarmı isim) [
     -sayı: index? (find değişkenisim isim)
-    either (find değer {"}) [
-      değer: replace değer {"} ""
+    either (find değer {`~}) [
+      değer: replace değer {`~} ""
       değişkendeğer/(-sayı): (math load değer)
+      -atan2: (math load değer)
     ][
       değişkendeğer/(-sayı): (do değer)
     ]
   ][
     append/only değişkenisim isim
-    either (find değer {"}) [
-      değer: replace değer {"} ""
+    either (find değer {`~}) [
+      değer: replace değer {`~} ""
       append/only değişkendeğer (math load değer)
+      -atan2: (math load değer)
     ][
       append/only değişkendeğer (do değer)
     ]
@@ -43,8 +45,8 @@ işlev: func [isim değer /local -sayı][
         -sayı: index? (find değişkenisim (to string! değer))
         print değişkendeğer/(-sayı)
       ][
-        either (find değer {"})[
-          değer: replace değer {"} ""
+        either (find değer {`~})[
+          değer: replace değer {`~} ""
           print (math load değer)
         ][
           print değer

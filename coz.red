@@ -8,7 +8,7 @@ Red [
 
 either system/options/args/1 [
     gelen: read rejoin[%./ system/options/args/1]
-    do %yorumlayıcı.red
+    #include %yorumlayıcı.red
 ][
-  do %kabuk.red
+  #include %kabuk.red
 ]

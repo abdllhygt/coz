@@ -67,6 +67,6 @@ Red[]
       -işlem: copy replace/all -işlem "+" " + "
       -işlem: copy replace/all -işlem "-" " - "
       -işlem: copy replace/all -işlem "*" " * "
-      -dön: rejoin[{"}-işlem]
+      -dön: rejoin[{`~} -işlem]
     )
 ]

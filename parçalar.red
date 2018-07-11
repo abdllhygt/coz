@@ -24,8 +24,8 @@ nokta: "."
 !nsdeğişken: [harf any [harf | !sayı]]
 
 
-do %karşılaştırma.red
-do %işlem.red
+#include %karşılaştırma.red
+#include %işlem.red
 
 !değişkenatama: [copy -atan1 !nsdeğişken !yaboş ":" !yaboş
   (-atan1: rejoin[-atan1] -paketdön: copy [])
@@ -49,13 +49,14 @@ do %işlem.red
     )
     | copy -atan2 !metin (
       -paketdön: (paketle/değişkenata -atan1 -atan2)
+      -atan2: -atan2
     )
     | copy -atan2 !sayı (
       -paketdön: (paketle/değişkenata -atan1 -atan2)
+      -atan2: -atan2
     )
   ] !yaboş
   !son
-  (-paketdön: (paketle/değişkenata -atan1 -atan2))
 ]
 
 !yaz: [
@@ -95,7 +96,7 @@ do %işlem.red
 
 !isetek: [
   !karşılaştırma !boş "ise" !boş
-  [if (-dön = "doğru") [ !kapatma | !işlev | !değişkenatama] | ]
+  [if (-dön = "yanlış") thru end | [ !kapatma | !işlev | !değişkenatama] ]
   !son
   (
     çöz -paketdön
