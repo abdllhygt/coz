@@ -62,8 +62,8 @@ nokta: "."
 !yaz: [
   [ (-paketdön: copy [])
     copy -dön !metin (-dön: do -dön)
-    | copy -dön !sayı
     | !işlem
+    | copy -dön !sayı
     | copy -değişken !değişken (
       either (değişkenvarmı -değişken)[
         -dön: to word! -değişken
