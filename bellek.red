@@ -103,6 +103,7 @@ işlev: func [isim değer /local -sayı][
         view [ title "Coz" size 350x100
           fyazı: field button "gönder" [
             -dön: fyazı/text
+            unview
           ]
         ]
         -dön: rejoin[{"} -dön {"}]
