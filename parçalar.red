@@ -30,7 +30,12 @@ nokta: "."
 !değişkenatama: [copy -atan1 !nsdeğişken !yaboş ":" !yaboş
   (-atan1: rejoin[-atan1] -paketdön: copy [])
   [
-    !işlem (
+    !oku (
+      -okunan: çöz -paketdön
+      -paketdön: (değişkenata -atan1 -okunan)
+      -atan2: rejoin[{"} (do -okunan) {"}]
+    )
+    | !işlem (
       -paketdön: (paketle/değişkenata -atan1 -dön)
       -atan2: -dön
     )
@@ -60,7 +65,7 @@ nokta: "."
 ]
 
 !yaz: [
-  [ (-paketdön: copy [])
+  [ (-paketdön: copy [] -hata: copy "")
     copy -dön !metin (-dön: do -dön)
     | !işlem
     | copy -dön !sayı
@@ -68,11 +73,29 @@ nokta: "."
       either (değişkenvarmı -değişken)[
         -dön: to word! -değişken
       ][
-        hataver/değişkenyok -değişken
+        -hata: "var"
       ]
     )
   ]  !yaboş
-  "yaz" (-paketdön: (paketle/işlev "yaz" -dön))
+  "yaz" !yaboş [ (if hata = "var" [hataver/değişkenyok -değişken])
+    "#dosya:" !yaboş {"} copy -hepsi [any hepsi] {"} ( -dönküme: copy []
+        append/only -dönküme -dön
+        append/only -dönküme -hepsi
+        -paketdön: (paketle/işlev "yaz#dosya" -dönküme)
+      )
+    | "#pencere" (-paketdön: (paketle/işlev "yaz#pencere" -dön))
+    | opt "#konsol" (-paketdön: (paketle/işlev "yaz" -dön))
+  ]
+]
+
+!oku: [ (-paketdön: copy [] )
+  "oku" !yaboş [
+    "#dosya:" !yaboş {"} copy -hepsi [any hepsi] {"} (
+        -paketdön: (paketle/işlev "oku#dosya" -hepsi)
+      )
+    | "#pencere" (-paketdön: (paketle/işlev "oku#pencere" ""))
+    | opt "#konsol" (-paketdön: (paketle/işlev "oku" ""))
+  ]
 ]
 
 !hepsi: [
@@ -83,8 +106,8 @@ nokta: "."
   )
 ]
 
-!işlev: [
-    !yaz
+!komut: [
+    !oku | !yaz
 ]
 
 !karşılaştırma: [
@@ -96,7 +119,7 @@ nokta: "."
 
 !isetek: [
   !karşılaştırma !boş "ise" !boş
-  [if (-dön = "yanlış") thru end | [ !kapatma | !işlev | !değişkenatama] ]
+  [if (-dön = "yanlış") thru end | [ !kapatma | !komut | !değişkenatama] ]
   !son
   (
     çöz -paketdön
@@ -111,7 +134,7 @@ nokta: "."
         !kapatma (çöz -paketdön)
         | !hepsi (çöz -paketdön)
         | !değişkenatama (çöz -paketdön)
-        | !işlev (çöz -paketdön)
+        | !komut (çöz -paketdön)
         | !isetek
         | !keretek
         | !tab
@@ -132,7 +155,7 @@ nokta: "."
       ]
     )
   ]
-  !boş "kere" !boş [!kapatma | !hepsi | !işlev | !değişkenatama] !son
+  !boş "kere" !boş [!kapatma | !hepsi | !komut | !değişkenatama] !son
   (
     repeat i (to integer! -miktar)[
       çöz -paketdön
@@ -157,7 +180,7 @@ nokta: "."
     !kapatma (append/only -paketler -paketdön)
     | !hepsi (append/only -paketler -paketdön)
     | !değişkenatama (append/only -paketler -paketdön)
-    | !işlev (append/only -paketler -paketdön)
+    | !komut (append/only -paketler -paketdön)
     | !tab
     | !son
     | !boş

@@ -6,19 +6,13 @@ Red [
 	}
 ]
 
-#include %paketle.red
-#include %çöz.red
-#include %bellek.red
-#include %parçalar.red
-#include %cozut.red
-
 tara: func [gelen][
   parse gelen [
     any [
       !kapatma (çöz -paketdön)
       | !hepsi (çöz -paketdön)
       | !değişkenatama (çöz -paketdön)
-      | !işlev (çöz -paketdön)
+      | !komut (çöz -paketdön)
       | !ise
       | !isetek
       | !kere

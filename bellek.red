@@ -53,6 +53,61 @@ işlev: func [isim değer /local -sayı][
         ]
       ]
     ]
+    "yaz#dosya" [
+      either (type? değer/1) = word![
+        -sayı: index? (find değişkenisim (to string! değer/1))
+        save rejoin[%./ değer/2] değişkendeğer/(-sayı)
+      ][
+        either (find değer/1 {`~})[
+          değer: replace değer {`~} ""
+          save rejoin[%./ değer/2] (math load değer)
+        ][
+          save rejoin[%./ değer/2] değer/1
+        ]
+      ]
+    ]
+    "yaz#pencere" [
+      either (type? değer) = word![
+        -sayı: index? (find değişkenisim (to string! değer))
+        değer: to string! değişkendeğer/(-sayı)
+      ][
+        either (find değer {`~})[
+          değer: replace değer {`~} ""
+          değer: to string! (math load değer)
+        ][
+          değer: to string! değer
+        ]
+      ]
+      either system/platform = 'Linux [
+        wsize 300x100 zenity/title "Coz" zenity/info değer
+      ][
+        view [ title "Coz" size 350x100
+          text değer
+        ]
+      ]
+    ]
+    "oku" [
+      -dön: copy {""}
+      -dön: rejoin[{"} (ask "") {"}]
+    ]
+    "oku#dosya" [
+      -dön: copy {""}
+      -dön: rejoin["{" (read (to file! değer)) "}"]
+    ]
+    "oku#pencere" [
+      -dön: copy {""}
+      either system/platform = 'Linux [
+        wsize 300x100 zenity/title "Coz" -dön: zenity/entry
+        -dön: rejoin[{"} -dön {"}]
+      ][
+        view [ title "Coz" size 350x100
+          fyazı: field button "gönder" [
+            -dön: fyazı/text
+          ]
+        ]
+        -dön: rejoin[{"} -dön {"}]
+      ]
+    ]
     "@" [
       foreach i değişkenisim [
         print rejoin[i ": " (değişkendön i)]

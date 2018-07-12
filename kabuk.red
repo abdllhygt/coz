@@ -6,15 +6,9 @@ Red [
 	}
 ]
 
-#include %paketle.red
-#include %çöz.red
-#include %bellek.red
-#include %parçalar.red
-#include %cozut.red
-
 print {
   Coz Programlama Dili
-  0.0.6
+  0.0.7
 
 }
 
@@ -24,13 +18,13 @@ tara: func [gelen][
   parse gelen [
     !kapatma (çöz -paketdön)
     | !hepsi (çöz -paketdön)
-    | copy -değer !değişken end (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" değişkenkon -değer "^[[0m"])
-    | copy -dön !metin end (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
-    | copy -dön !sayı end (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
+    | !komut (çöz -paketdön)
+    | copy -değer !değişken !son (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" değişkenkon -değer "^[[0m"])
+    | copy -dön !metin !son (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
+    | copy -dön !sayı !son (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
     | !değişkenatama (
         çöz -paketdön print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -atan2 "^[[0m"]
       )
-    | !işlev (çöz -paketdön)
     | !isetek
     | !keretek
     | !karşılaştırma !son (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
