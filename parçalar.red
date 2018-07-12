@@ -77,7 +77,7 @@ nokta: "."
       ]
     )
   ]  !yaboş
-  "yaz" !yaboş [ (if hata = "var" [hataver/değişkenyok -değişken])
+  "yaz" !yaboş [ (if -hata = "var" [hataver/değişkenyok -değişken])
     "#dosya:" !yaboş {"} copy -hepsi [any hepsi] {"} ( -dönküme: copy []
         append/only -dönküme -dön
         append/only -dönküme -hepsi
