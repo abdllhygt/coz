@@ -11,8 +11,8 @@ tara: func [gelen][
     any [
       !kapatma (çöz -paketdön)
       | !hepsi (çöz -paketdön)
-      | !değişkenatama (çöz -paketdön)
-      | !komut (çöz -paketdön)
+      | !değişkenatama !son (çöz -paketdön)
+      | !komut !son (çöz -paketdön)
       | !ise
       | !isetek
       | !kere
@@ -21,9 +21,11 @@ tara: func [gelen][
       | !işlem !son
       | !son
       | !boş
+      | !metinbirleştirme !son
       | !değişken !son
       | !metin !son
       | !sayı !son
+      | (hataver/sözdizimi)
     ]
   ]
 ]

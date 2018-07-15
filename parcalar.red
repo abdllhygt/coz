@@ -9,7 +9,7 @@ Red [
 !boş: [some [space | tab]]
 !yaboş: [any [space | tab]]
 !tab: [tab]
-!son: [any space [newline | end ]]
+!son: [any space [newline | end | "^M"]]
 küçükharf: charset "abcçdefgğhıijklmnoöprsştuüvyzwxqé"
 büyükharf: charset "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZWXQÉ"
 harf: union küçükharf büyükharf
@@ -59,7 +59,12 @@ nokta: "."
 !değişkenatama: [copy -atan1 !nsdeğişken !yaboş ":" !yaboş
   (-atan1: rejoin[-atan1] -paketdön: copy [])
   [
-    !oku (
+
+    !metinbirleştirme (
+      -paketdön:  (paketle/değişkenata -atan1 -dön)
+      -atan2: -dön
+    )
+    | !oku (
       -okunan: çöz -paketdön
       -paketdön: (değişkenata -atan1 -okunan)
       -atan2: rejoin[{"} (do -okunan) {"}]
@@ -81,10 +86,6 @@ nokta: "."
       -atan2: replace/all -atan2 "," " "
       -paketdön: (paketle/değişkenata -atan1 -atan2)
     )
-    | !metinbirleştirme (
-      -paketdön:  (paketle/değişkenata -atan1 -dön)
-      -atan2: -dön
-    )
     | copy -atan2 !metin (
       -paketdön: (paketle/değişkenata -atan1 -atan2)
       -atan2: -atan2
@@ -94,7 +95,6 @@ nokta: "."
       -atan2: -atan2
     )
   ] !yaboş
-  !son
 ]
 
 !yaz: [
@@ -229,4 +229,4 @@ nokta: "."
   )
 ]
 
-!kapatma: ["kapat" (-paketdön: (paketle/işlev "kapat" []))]
+!kapatma: ["kapat" !son (-paketdön: (paketle/işlev "kapat" []))]

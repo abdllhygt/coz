@@ -88,7 +88,8 @@ işlev: func [isim değer /local -sayı][
     ]
     "oku" [
       -dön: copy {""}
-      -dön: rejoin[{"} (ask "") {"}]
+      -dön: ask ""
+      -dön: rejoin[{"} (replace -dön "^M" "") {"}]
     ]
     "oku#dosya" [
       -dön: copy {""}
