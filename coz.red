@@ -7,6 +7,9 @@ Red [
   Needs: 'View
 ]
 
+#include %environment/console/CLI/input.red
+;#include %dynamic-ask.red
+
 #include %zenity.red
 
 #include %paketle.red

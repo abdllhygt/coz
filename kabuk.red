@@ -12,8 +12,6 @@ print {
 
 }
 
-#include %dynamic-ask.red
-
 tara: func [gelen][
   parse gelen [
     !kapatma (çöz -paketdön)
