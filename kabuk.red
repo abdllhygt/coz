@@ -8,7 +8,7 @@ Red [
 
 print {
   Coz Programlama Dili
-  0.0.7
+  0.0.8
 
 }
 
@@ -21,6 +21,7 @@ tara: func [gelen][
     | !komut (çöz -paketdön)
     | copy -değer !değişken !son (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" değişkenkon -değer "^[[0m"])
     | copy -dön !metin !son (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
+    | !metinbirleştirme !son (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
     | copy -dön !sayı !son (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
     | !değişkenatama (
         çöz -paketdön print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -atan2 "^[[0m"]

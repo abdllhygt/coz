@@ -24,8 +24,37 @@ nokta: "."
 !nsdeğişken: [harf any [harf | !sayı]]
 
 
-#include %karşılaştırma.red
-#include %işlem.red
+#include %karsilastirma.red
+#include %islem.red
+
+!metinbirleştirme: [
+  [
+    copy -metin1 !metin (-metin1: do -metin1)
+    | copy -metin1 !değişken (
+      either (değişkenvarmı -metin1)[
+        -metin1: değişkendön -metin1
+      ][
+        -metin1: ""
+      ]
+      )
+    | copy -metin1 !sayı
+  ] !yaboş
+  "." !yaboş
+  [
+    copy -metin2 !metin (-metin2: do -metin2)
+    | copy -metin2 !değişken (
+      either (değişkenvarmı -metin2)[
+        -metin2: değişkendön -metin2
+      ][
+        -metin2: ""
+      ]
+      )
+    | copy -metin2 !sayı
+  ]
+  (
+    -dön: rejoin[{"} -metin1 -metin2 {"}]
+  )
+]
 
 !değişkenatama: [copy -atan1 !nsdeğişken !yaboş ":" !yaboş
   (-atan1: rejoin[-atan1] -paketdön: copy [])
@@ -52,6 +81,10 @@ nokta: "."
       -atan2: replace/all -atan2 "," " "
       -paketdön: (paketle/değişkenata -atan1 -atan2)
     )
+    | !metinbirleştirme (
+      -paketdön:  (paketle/değişkenata -atan1 -dön)
+      -atan2: -dön
+    )
     | copy -atan2 !metin (
       -paketdön: (paketle/değişkenata -atan1 -atan2)
       -atan2: -atan2
@@ -66,7 +99,8 @@ nokta: "."
 
 !yaz: [
   [ (-paketdön: copy [] -hata: copy "")
-    copy -dön !metin (-dön: do -dön)
+    !metinbirleştirme (-dön: do -dön)
+    | copy -dön !metin (-dön: do -dön)
     | !işlem
     | copy -dön !sayı
     | copy -değişken !değişken (

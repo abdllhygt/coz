@@ -12,7 +12,9 @@ hataver: context[
     print "COZUTTU!"
     print rejoin[isim " isminde bir değişken yok!"]
     print ""
-    quit
+    unless kabukAktifMi [
+      quit
+    ]
   ]
 
   değişkensayıdeğil: func [isim][
@@ -20,7 +22,9 @@ hataver: context[
     print "COZUTTU!"
     print rejoin[isim " değişkeni sayı değil!"]
     print ""
-    quit
+    unless kabukAktifMi [
+      quit
+    ]
   ]
 
   büyükküçüksayıolmalı: func [][
@@ -28,7 +32,9 @@ hataver: context[
     print "COZUTTU!"
     print rejoin["Büyük/küçük karşılaştırmaları sayı üzerinden yapılır!"]
     print ""
-    quit
+    unless kabukAktifMi [
+      quit
+    ]
   ]
 
   sözdizimi: func [][
@@ -36,6 +42,8 @@ hataver: context[
     print "COZUTTU!"
     print rejoin["Söz dizimi hatası"]
     print ""
-    quit
+    unless kabukAktifMi [
+      quit
+    ]
   ]
 ]

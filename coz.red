@@ -4,19 +4,22 @@ Red [
 	License: {
 		Şuan yok
 	}
+  Needs: 'View
 ]
 
 #include %zenity.red
 
 #include %paketle.red
-#include %çöz.red
+#include %coez.red
 #include %bellek.red
-#include %parçalar.red
+#include %parcalar.red
 #include %cozut.red
 
-either system/options/args/1 [
+kabukAktifMi: false
+either system/options/args [
     gelen: read rejoin[%./ system/options/args/1]
-    #include %yorumlayıcı.red
+    #include %yorumlayici.red
 ][
+  kabukAktifMi: true
   #include %kabuk.red
 ]
