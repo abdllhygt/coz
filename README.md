@@ -13,22 +13,22 @@ a: oku
 
 ## Dosyaya Yazma
 ```ruby
-"merhaba" yaz #dosya:"deneme.txt"
+"deneme.txt" ye "merhaba" yaz
 ```
 
 ## Dosyadan Okuma
 ```ruby
-a: oku #dosya:"deneme.txt"
+a: "deneme.txt" den oku
 ```
 
 ## Pencereyle Gösterme
 ```ruby
-"merhaba" yaz #pencere
+pencereye "merhaba" yaz
 ```
 
 ## Pencereden Okuma
 ```ruby
-a: oku #pencere
+a: pencereden oku
 ```
 
 ## Değişken Atama
