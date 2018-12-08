@@ -25,16 +25,16 @@ do %islem.red
     append -metinler rejoin [-metindön " "]
   )
   !yaboş "+" !yaboş
-  !metin (
-    append -metinler rejoin [-metindön " "]
+  [!metin (-dön: -metindön) | !değişken (-dön: -değişkendön) | !sayı (-dön: -sayıdön)] (
+    append -metinler rejoin [-dön " "]
   ) any [
     !yaboş "+" !yaboş
-    !metin (
-      append -metinler rejoin [-metindön " "]
+    [!metin (-dön: -metindön) | !değişken (-dön: -değişkendön) | !sayı (-dön: -sayıdön)] (
+      append -metinler rejoin [-dön " "]
     )
   ]
   (
-    -dön: copy "rejoin [" -metinler "]"
+    -dön: copy rejoin ["rejoin [" -metinler "]"]
   )
 ]
 
@@ -49,7 +49,7 @@ do %islem.red
 ]
 
 !oku: [
-  "oku" (-kaynak: copy {ask {^[[31;1;1m>^[[0m ^[[32;1;3m}})
+  "oku" (-kaynak: copy {ask {^[[31;1;1m>^[[0m ^[[32;1;3m}} -dön: copy "")
 ]
 
 !dosyaOku: [
@@ -163,11 +163,11 @@ do %islem.red
     | !eşitdeğilmi (-koşulkaynak: copy -kaynak) !boş "ise"
     | !büyükmü (-koşulkaynak: copy -kaynak) !boş "ise"
     | !küçükmü (-koşulkaynak: copy -kaynak) !boş "ise"
-  ] !yaboş "{"
-  !komut (-komut: copy -kaynak
-    -kaynak: copy rejoin ["if " -koşulkaynak " [" -komut "]"]
+  ] !yaboş (-blokkaynak: copy "") "{"
+  any [ newline | space | tab | !komut (append -blokkaynak rejoin [-kaynak " "])]
+  "}" (
+    -kaynak: copy rejoin ["if " -koşulkaynak " [" -blokkaynak "]"]
   )
-  !yaboş "}"
 ]
 
 !kere: [

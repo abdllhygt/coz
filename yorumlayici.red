@@ -9,7 +9,9 @@ Red [
 tara: func [gelen][
   parse gelen [
     any [
-      !komut (do -kaynak)
+      !kapat
+      | !değişkenata (do -kaynak)
+      | !komut (do -kaynak)
       | !ise (do -kaynak)
       | !kere (do -kaynak)
       | !keretek (do -kaynak)
@@ -22,7 +24,7 @@ tara: func [gelen][
       | !değişken !son
       | !metin !son
       | !sayı !son
-      | (hataver/sözdizimi)
+      ;| (hataver/sözdizimi)
     ]
   ]
 ]
