@@ -9,15 +9,12 @@ Red [
 tara: func [gelen][
   parse gelen [
     any [
-      !kapatma (çöz -paketdön)
-      | !hepsi (çöz -paketdön)
-      | !değişkenatama !son (çöz -paketdön)
-      | !komut !son (çöz -paketdön)
-      | !ise
-      | !isetek
-      | !kere
-      | !keretek
-      | !karşılaştırma !son
+      !komut (do -kaynak)
+      | !ise (do -kaynak)
+      | !kere (do -kaynak)
+      | !keretek (do -kaynak)
+      | !isetek (do -kaynak)
+      | [!büyükmü | !küçükmü | !eşitmi | !eşitdeğilmi] !son
       | !işlem !son
       | !son
       | !boş

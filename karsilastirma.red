@@ -2,154 +2,96 @@ Red[]
 
 !eşitmi: [
   [
-    !işlem (-karşın1: -dön)
-    | copy -değişken !değişken (
-      either (değişkenvarmı -değişken)[
-        -karşın1: (değişkendön -değişken)
-      ][
-        hataver/değişkenyok -değişken
-      ]
-    )
-    | copy -karşın1 !metin (-karşın1: do -karşın1)
+    !işlem (-karşın1: -kaynak)
+    | copy -karşın1 !değişken
+    | copy -karşın1 !metin
     | copy -karşın1 !sayı (-karşın1: to float! -karşın1)
   ]
   !yaboş "=" !yaboş
   [
-    !işlem (-karşın2: -dön)
-    | copy -değişken !değişken (
-      either (değişkenvarmı -değişken)[
-        -karşın2: (değişkendön -değişken)
-      ][
-        hataver/değişkenyok -değişken
-      ]
-    )
-    | copy -karşın2 !metin (-karşın2: do -karşın2)
+    !işlem (-karşın2: -kaynak)
+    | copy -karşın2 !değişken
+    | copy -karşın2 !metin
     | copy -karşın2 !sayı (-karşın2: to float! -karşın2)
   ]
   (
-    either -karşın1 = -karşın2 [
-      -dön: copy "doğru"
+    -kaynak: rejoin[-karşın1 " = " -karşın2]
+    either (do -kaynak)[
+      -dön: "doğru"
     ][
-      -dön: copy "yanlış"
+      -dön: "yanlış"
     ]
   )
 ]
 
 !eşitdeğilmi: [
   [
-    !işlem (-karşın1: -dön)
-    | copy -değişken !değişken (
-      either (değişkenvarmı -değişken)[
-        -karşın1: (değişkendön -değişken)
-      ][
-        hataver/değişkenyok -değişken
-      ]
-    )
-    | copy -karşın1 !metin (-karşın1: do -karşın1)
+    !işlem (-karşın1: -kaynak)
+    | copy -karşın1 !değişken
+    | copy -karşın1 !metin
     | copy -karşın1 !sayı (-karşın1: to float! -karşın1)
   ]
   !yaboş "!=" !yaboş
   [
-    !işlem (-karşın2: -dön)
-    | copy -değişken !değişken (
-      either (değişkenvarmı -değişken)[
-        -karşın2: (değişkendön -değişken)
-      ][
-        hataver/değişkenyok -değişken
-      ]
-    )
-    | copy -karşın2 !metin (-karşın2: do -karşın2)
+    !işlem (-karşın2: -kaynak)
+    | copy -karşın2 !değişken
+    | copy -karşın2 !metin
     | copy -karşın2 !sayı (-karşın2: to float! -karşın2)
   ]
   (
-    either -karşın1 = -karşın2 [
-      -dön: copy "yanlış"
+    -kaynak: rejoin[-karşın1 " = " -karşın2]
+    either (do -kaynak)[
+      -dön: "doğru"
     ][
-      -dön: copy "doğru"
+      -dön: "yanlış"
     ]
   )
 ]
 
 !büyükmü: [
   [
-    !işlem (-karşın1: -dön)
-    | copy -değişken !değişken (
-      either (değişkenvarmı -değişken)[
-        -karşın1: (değişkendön -değişken)
-        unless değişkensayımı -değişken[
-          print değişkentipi -değişken
-          hataver/değişkensayıdeğil -değişken
-        ]
-      ][
-        hataver/değişkenyok -değişken
-      ]
-    )
-    | copy -karşın1 !metin (hataver/büyükküçüksayıolmalı)
+    !işlem (-karşın1: -kaynak)
+    | copy -karşın1 !değişken
+    | !metin (-karşın1: -metindön)
     | copy -karşın1 !sayı (-karşın1: to float! -karşın1)
   ]
   !yaboş ">" !yaboş
   [
-    !işlem (-karşın2: -dön)
-    | copy -değişken !değişken (
-      either (değişkenvarmı -değişken)[
-        -karşın2: (değişkendön -değişken)
-        unless (değişkentipi -değişken) = "sayı"[
-          hataver/değişkensayıdeğil -değişken
-        ]
-      ][
-        hataver/değişkenyok -değişken
-      ]
-    )
-    | copy -karşın2 !metin (hataver/büyükküçüksayıolmalı)
+    !işlem (-karşın2: -kaynak)
+    | copy -karşın2 !değişken
+    | !metin (-karşın2: -metindön)
     | copy -karşın2 !sayı (-karşın2: to float! -karşın2)
   ]
   (
-    either -karşın1 > -karşın2 [
-      -dön: copy "doğru"
+    -kaynak: rejoin[-karşın1 " > " -karşın2]
+    either (do -kaynak)[
+      -dön: "doğru"
     ][
-      -dön: copy "yanlış"
+      -dön: "yanlış"
     ]
   )
 ]
 
 !küçükmü: [
-  [
-    !işlem (-karşın1: -dön)
-    | copy -değişken !değişken (
-      either (değişkenvarmı -değişken)[
-        -karşın1: (değişkendön -değişken)
-        unless değişkensayımı -değişken[
-          print değişkentipi -değişken
-          hataver/değişkensayıdeğil -değişken
-        ]
-      ][
-        hataver/değişkenyok -değişken
-      ]
-    )
-    | copy -karşın1 !metin (hataver/büyükküçüksayıolmalı)
-    | copy -karşın1 !sayı (-karşın1: to float! -karşın1)
-  ]
-  !yaboş "<" !yaboş
-  [
-    !işlem (-karşın2: -dön)
-    | copy -değişken !değişken (
-      either (değişkenvarmı -değişken)[
-        -karşın2: (değişkendön -değişken)
-        unless (değişkentipi -değişken) = "sayı"[
-          hataver/değişkensayıdeğil -değişken
-        ]
-      ][
-        hataver/değişkenyok -değişken
-      ]
-    )
-    | copy -karşın2 !metin (hataver/büyükküçüksayıolmalı)
-    | copy -karşın2 !sayı (-karşın2: to float! -karşın2)
-  ]
-  (
-    either -karşın1 < -karşın2 [
-      -dön: copy "doğru"
-    ][
-      -dön: copy "yanlış"
+    [
+      !işlem (-karşın1: -kaynak)
+      | copy -karşın1 !değişken
+      | !metin (-karşın1: -metindön)
+      | copy -karşın1 !sayı (-karşın1: to float! -karşın1)
     ]
-  )
+    !yaboş "<" !yaboş
+    [
+      !işlem (-karşın2: -kaynak)
+      | copy -karşın2 !değişken
+      | !metin (-karşın2: -metindön)
+      | copy -karşın2 !sayı (-karşın2: to float! -karşın2)
+    ]
+    (
+      -kaynak: rejoin[-karşın1 " < " -karşın2]
+      either (do -kaynak)[
+        -dön: "doğru"
+      ][
+        -dön: "yanlış"
+      ]
+    )
 ]

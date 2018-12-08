@@ -1,72 +1,62 @@
 Red[]
 
 !işlem: [ (hata: copy [] -şey: copy "")
-    [
-      copy -şey !sayı
-      | copy -değişken !değişken (
-        unless değişkenvarmı -değişken [
-          append hata "var"
-          append hata -değişken
-        ]
-        either değişkensayımı -değişken [
-          -şey: rejoin['değişkendeğer "/" (index? (find değişkenisim -değişken))]
-        ][
-          append hata "var"
-          append hata -değişken
-        ]
-      )
-    ]
+    copy -şey !sayı
     !yaboş (-işlem: copy -şey)[
-      copy -şey "+"
-      | copy -şey "-"
-      | copy -şey "*"
-      | copy -şey "/" (-şey: " / ")
+      "+" (-şey: copy " + ")
+      | "-" (-şey: copy " - ")
+      | "*" (-şey: copy " * ")
+      | "/" (-şey: copy " / ")
     ] (
       append -işlem -şey
     )
     !yaboş
     [
       copy -şey !sayı
-      | copy -değişken !değişken (
-        unless değişkenvarmı -değişken [
-          hataver/değişkenyok -değişken
-        ]
-        either değişkensayımı -değişken [
-          -şey: rejoin['değişkendeğer "/" (index? (find değişkenisim -değişken))]
+      | copy -şey !değişken (
+        either (do rejoin["type? " -şey]) = integer! [
+
         ][
-          hataver/değişkensayıdeğil -değişken
+          either (do rejoin["type? " -şey]) = float![
+          ][
+            append hata "var"
+            append hata -şey
+          ]
         ]
       )
     ]
     (append -işlem -şey)
     any [
       !yaboş [
-        copy -şey "+"
-        | copy -şey "-"
-        | copy -şey "*"
-        | copy -şey "/" (-şey: " / ")
+        "+" (-şey: copy " + ")
+        | "-" (-şey: copy " - ")
+        | "*" (-şey: copy " * ")
+        | "/" (-şey: copy " / ")
       ] (append -işlem -şey)
       !yaboş
       [
         copy -şey !sayı
-        | copy -değişken !değişken (
-          unless değişkenvarmı -değişken [
-            hataver/değişkenyok -değişken
-          ]
-          either değişkensayımı -değişken [
-            -şey: rejoin['değişkendeğer "/" (index? (find değişkenisim -değişken))]
+        | copy -şey !değişken (
+          either (do rejoin["type? " -şey]) = integer! [
           ][
-            hataver/değişkensayıdeğil -değişken
+            either (do rejoin["type? " -şey]) = float![
+            ][
+              append hata "var"
+              append hata -şey
+            ]
           ]
         )
       ]
       (append -işlem -şey)
     ]
     (
-      if (length? hata) > 1 [hataver/değişkensayıdeğil hata/2]
-      -işlem: copy replace/all -işlem "+" " + "
-      -işlem: copy replace/all -işlem "-" " - "
-      -işlem: copy replace/all -işlem "*" " * "
-      -dön: rejoin[{`~} -işlem]
+      either (length? hata) > 1 [
+        hataver/değişkensayıdeğil hata/2
+        -kaynak: "0"
+        -dön: 0
+      ][
+        -kaynak: rejoin["["-işlem "]"]
+        -dön: do -işlem
+      ]
     )
 ]

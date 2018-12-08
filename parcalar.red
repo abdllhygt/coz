@@ -1,232 +1,212 @@
-Red [
-  Title:   "COZ"
-	Author:  "Abdullah Yiğiterol"
-	License: {
-		Şuan yok
-	}
-]
+Red []
 
 !boş: [some [space | tab]]
 !yaboş: [any [space | tab]]
 !tab: [tab]
 !son: [any space [newline | end | "^M"]]
-küçükharf: charset "abcçdefgğhıijklmnoöprsştuüvyzwxqé"
-büyükharf: charset "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZWXQÉ"
-harf: union küçükharf büyükharf
-hepsi: complement charset {"}
-rakam: charset "0123456789"
-numara: charset "123456789"
-nokta: "."
-!sayı: [ "0" | [numara any rakam any[nokta rakam]] ]
-!metin: [{"} any hepsi {"}]
+!küçükharf: charset "abcçdefgğhıijklmnoöprsştuüvyzwxqé"
+!büyükharf: charset "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZWXQÉ"
+!harf: union !küçükharf !büyükharf
+!hepsi: complement charset {"}
+!rakam: charset "0123456789"
+!numara: charset "123456789"
+!nokta: "."
+!sayı: [ copy -sayıdön ["0" | [!numara any !rakam any[!nokta !rakam]]] ]
+!metin: [ copy -metindön [{"} any !hepsi {"}]]
 !liste: ["[" !yaboş [!metin | !sayı] !yaboş any ["," !yaboş [!metin | !sayı] ] !yaboş "]"]
-!değişken: [harf any [harf | !sayı]]
-!nsdeğişken: [harf any [harf | !sayı]]
+!değişken: [ copy -değişkendön [!harf any [!harf | !sayı]]]
 
 
-#include %karsilastirma.red
-#include %islem.red
+do %karsilastirma.red
+do %islem.red
 
-!metinbirleştirme: [
-  [
-    copy -metin1 !metin (-metin1: do -metin1)
-    | copy -metin1 !değişken (
-      either (değişkenvarmı -metin1)[
-        -metin1: değişkendön -metin1
-      ][
-        -metin1: ""
-      ]
-      )
-    | copy -metin1 !sayı
-  ] !yaboş
-  "." !yaboş
-  [
-    copy -metin2 !metin (-metin2: do -metin2)
-    | copy -metin2 !değişken (
-      either (değişkenvarmı -metin2)[
-        -metin2: değişkendön -metin2
-      ][
-        -metin2: ""
-      ]
-      )
-    | copy -metin2 !sayı
+!metinBirleştirme: [ (-metinler: copy "")
+  !metin (
+    append -metinler rejoin [-metindön " "]
+  )
+  !yaboş "+" !yaboş
+  !metin (
+    append -metinler rejoin [-metindön " "]
+  ) any [
+    !yaboş "+" !yaboş
+    !metin (
+      append -metinler rejoin [-metindön " "]
+    )
   ]
   (
-    -dön: rejoin[{"} -metin1 -metin2 {"}]
+    -dön: copy "rejoin [" -metinler "]"
   )
-]
-
-!değişkenatama: [copy -atan1 !nsdeğişken !yaboş ":" !yaboş
-  (-atan1: rejoin[-atan1] -paketdön: copy [])
-  [
-
-    !metinbirleştirme (
-      -paketdön:  (paketle/değişkenata -atan1 -dön)
-      -atan2: -dön
-    )
-    | !oku (
-      -okunan: çöz -paketdön
-      -paketdön: (değişkenata -atan1 -okunan)
-      -atan2: rejoin[{"} (do -okunan) {"}]
-    )
-    | !işlem (
-      -paketdön: (paketle/değişkenata -atan1 -dön)
-      -atan2: -dön
-    )
-    | copy -atan2 !değişken (
-      either (değişkenvarmı -atan2)[
-        -değeri: değişkendön -atan2
-        -paketdön: (paketle/değişkenata -atan1 -değeri)
-        -atan2: -değeri
-      ][
-        hataver/değişkenyok -atan2
-      ]
-    )
-    | copy -atan2 !liste (
-      -atan2: replace/all -atan2 "," " "
-      -paketdön: (paketle/değişkenata -atan1 -atan2)
-    )
-    | copy -atan2 !metin (
-      -paketdön: (paketle/değişkenata -atan1 -atan2)
-      -atan2: -atan2
-    )
-    | copy -atan2 !sayı (
-      -paketdön: (paketle/değişkenata -atan1 -atan2)
-      -atan2: -atan2
-    )
-  ] !yaboş
 ]
 
 !yaz: [
-  [ (-paketdön: copy [] -hata: copy "")
-    !metinbirleştirme (-dön: do -dön)
-    | copy -dön !metin (-dön: do -dön)
-    | !işlem
-    | copy -dön !sayı
-    | copy -değişken !değişken (
-      either (değişkenvarmı -değişken)[
-        -dön: to word! -değişken
-      ][
-        -hata: "var"
-      ]
-    )
-  ]  !yaboş
-  "yaz" !yaboş [ (if -hata = "var" [hataver/değişkenyok -değişken])
-    "#dosya:" !yaboş {"} copy -hepsi [any hepsi] {"} ( -dönküme: copy []
-        append/only -dönküme -dön
-        append/only -dönküme -hepsi
-        -paketdön: (paketle/işlev "yaz#dosya" -dönküme)
-      )
-    | "#pencere" (-paketdön: (paketle/işlev "yaz#pencere" -dön))
-    | opt "#konsol" (-paketdön: (paketle/işlev "yaz" -dön))
-  ]
-]
-
-!oku: [ (-paketdön: copy [] )
-  "oku" !yaboş [
-    "#dosya:" !yaboş {"} copy -hepsi [any hepsi] {"} (
-        -paketdön: (paketle/işlev "oku#dosya" -hepsi)
-      )
-    | "#pencere" (-paketdön: (paketle/işlev "oku#pencere" ""))
-    | opt "#konsol" (-paketdön: (paketle/işlev "oku" ""))
-  ]
-]
-
-!hepsi: [
-  "@"
-  !son
-  (
-    -paketdön: (paketle/işlev "@" [])
+  [!değer | !değişken (-değer: -değişkendön)]
+  !boş
+  "yaz" (
+    if (mold do -değer) = "true" [-değer: {"doğru"}]
+    if (mold do -değer) = "false" [-değer: {"yanlış"}]
+    -kaynak: rejoin["print " -değer]
   )
+]
+
+!oku: [
+  "oku" (-kaynak: copy {ask {^[[31;1;1m>^[[0m ^[[32;1;3m}})
+]
+
+!dosyaOku: [
+  copy -okunan [!metin | !değişken] !boş opt[["dan"|"den"] !boş]
+  "oku" (
+    -kaynak: rejoin["read to file! " -okunan]
+  )
+]
+
+!pencereOku: [
+  "pencere" !boş "oku" (
+    either sistem = "Linux" [
+      -kaynak: copy "zenity/entry"
+    ][
+      -kaynak: copy {view [ title "Coz"
+        -girdi: field -tık: button "gir" [
+          -dön: girdi/text
+        ]
+      ]}
+    ]
+  )
+]
+
+!pencereYaz: [
+  "pencere" opt ["ye" | "den"] !boş copy -yazı [!değişken | !değer] !boş
+  "yaz" (
+    if (mold do -yazı) = "true" [-yazı: {"doğru"}]
+    if (mold do -yazı) = "false" [-yazı: {"yanlış"}]
+    either sistem = "Linux" [
+      -kaynak: rejoin["zenity/info " -yazı] ;sayı yazmıyor
+    ][
+      -kaynak: rejoin[{view [ title "Coz" text } -yazı {]}]
+    ]
+  )
+]
+
+!dosyaYaz: [
+  !metin !boş (-dosya: -metindön) opt[["ye"|"ya"] !boş]
+  !değer !boş
+  if -dön [-dön: {"doğru"}]
+  unless -dön [-dön: {"yanlış"}]
+  "yaz" (
+    -kaynak: rejoin ["write %" -dosya " " -değer]
+  )
+]
+
+
+!doğyan: [
+  "doğru" (-kaynak: copy "true" -dön: copy "doğru")
+  | "yanlış" (-kaynak: copy "false" -dön: copy "yanlış")
+]
+
+!değer: [ (-değer: copy "")
+  !pencereOku (-değer: copy -kaynak)
+  | !dosyaOku (-değer: copy -kaynak)
+  | !oku (-değer: copy -kaynak)
+  | !doğyan (-değer: copy -kaynak)
+  | !metinBirleştirme (-değer: copy -dön)
+  | !büyükmü (-değer: copy -kaynak)
+  | !küçükmü (-değer: copy -kaynak)
+  | !eşitmi (-değer: copy -kaynak)
+  | !eşitdeğilmi (-değer: copy -kaynak)
+  | !işlem (-değer: copy -kaynak)
+  |
+  copy -değer [
+    !metin (-dön: copy -metindön)
+    | !sayı (-dön: copy -sayıdön)
+  ]
+]
+
+!değişkenAta: [
+  copy -değişken !değişken ":"
+  !yaboş
+  [!değer (
+    -kaynak: rejoin[-değişken ": " -değer]
+    ;-dön: copy -değer
+    parse mold -dön [
+      [!yaboş [!işlem | !sayı | !metin] !boş ["="|"<"|">"] !boş [!işlem | !sayı | !metin] !yaboş
+      (either (do -dön)[-dön: copy "doğru"][-dön: copy "yanlış"])
+      ]
+      | ["true" | "false"]
+      (either (do -dön)[-dön: copy "doğru"][-dön: copy "yanlış"] )
+    ]
+  )
+  |
+    !değişken (
+      -kaynak: rejoin[-değişken ": " -değişkendön]
+      -dön: copy do -değişkendön
+    )
+  ]
 ]
 
 !komut: [
-    !oku | !yaz
+  [
+    !değişkenAta
+    | !pencereYaz
+    | !dosyaYaz
+    | !yaz
+    | !oku
+    | !kapat
+  ] !son
 ]
 
-!karşılaştırma: [
-  !eşitmi
-  | !eşitdeğilmi
-  | !büyükmü
-  | !küçükmü
-]
-
-!isetek: [
-  !karşılaştırma !boş "ise" !boş
-  [if (-dön = "yanlış") thru end | [ !kapatma | !komut | !değişkenatama] ]
-  !son
-  (
-    çöz -paketdön
-  )
+!kapat: [
+  "kapat" (-kaynak: "quit")
 ]
 
 !ise: [
-  !karşılaştırma !boş "ise" !yaboş "{"
-  [if (-dön = "yanlış")
-    thru "}"
-    | any [
-        !kapatma (çöz -paketdön)
-        | !hepsi (çöz -paketdön)
-        | !değişkenatama (çöz -paketdön)
-        | !komut (çöz -paketdön)
-        | !isetek
-        | !keretek
-        | !tab
-        | !son
-        | !boş
-    ] "}"
-  ]
-]
-
-!keretek: [
   [
-    copy -miktar !sayı
-    | copy -miktar !değişken (
-      either (değişkensayımı -miktar)[
-        -miktar: değişkendön -miktar
-      ][
-        -miktar: 0
-      ]
-    )
-  ]
-  !boş "kere" !boş [!kapatma | !hepsi | !komut | !değişkenatama] !son
-  (
-    repeat i (to integer! -miktar)[
-      çöz -paketdön
-    ]
+    !eşitmi (-koşulkaynak: copy -kaynak) !boş "ise"
+    | !eşitdeğilmi (-koşulkaynak: copy -kaynak) !boş "ise"
+    | !büyükmü (-koşulkaynak: copy -kaynak) !boş "ise"
+    | !küçükmü (-koşulkaynak: copy -kaynak) !boş "ise"
+  ] !yaboş "{"
+  !komut (-komut: copy -kaynak
+    -kaynak: copy rejoin ["if " -koşulkaynak " [" -komut "]"]
   )
+  !yaboş "}"
 ]
 
 !kere: [
-  [
-    copy -miktar !sayı
-    | copy -miktar !değişken (
-      either (değişkensayımı -miktar)[
-        -miktar: değişkendön -miktar
-      ][
-        -miktar: 0
-      ]
-    )
-  ]
-  !boş "kere" !yaboş "{"
-  (-paketler: copy [])
-  any [
-    !kapatma (append/only -paketler -paketdön)
-    | !hepsi (append/only -paketler -paketdön)
-    | !değişkenatama (append/only -paketler -paketdön)
-    | !komut (append/only -paketler -paketdön)
-    | !tab
-    | !son
-    | !boş
-  ]
+  copy -sayı [!sayı | !değişken] !boş
+  "kere" !yaboş "{" any !son !boş !komut (
+    -kaynak: rejoin ["repeat i " -sayı "[" -kaynak "]"]
+  )
   "}"
-  (
-    repeat i (to integer! -miktar)[
-      foreach p -paketler [
-        çöz p
-      ]
-    ]
+]
+
+!isetek: [
+  [
+    !eşitmi (-koşulkaynak: copy -kaynak) !boş "ise"
+    | !eşitdeğilmi (-koşulkaynak: copy -kaynak) !boş "ise"
+    | !büyükmü (-koşulkaynak: copy -kaynak) !boş "ise"
+    | !küçükmü (-koşulkaynak: copy -kaynak) !boş "ise"
+  ] !boş
+  !komut (-komut: copy -kaynak
+    -kaynak: copy rejoin ["if " -koşulkaynak " [" -komut "]"]
   )
 ]
 
-!kapatma: ["kapat" !son (-paketdön: (paketle/işlev "kapat" []))]
+!keretek: [
+  copy -sayı [!sayı | !değişken] !boş
+  "kere" !boş !komut (
+    -kaynak: rejoin ["repeat i " -sayı "[" -kaynak "]"]
+  )
+]
+
+!ikentek: [
+  [
+    !eşitmi (-koşulkaynak: copy -kaynak) !boş "iken" !boş !komut (
+        -kaynak: rejoin ["while [" -koşulkaynak "] [" -kaynak "]"]
+      )
+    | !büyükmü (-koşulkaynak: copy -kaynak) !boş "iken" !boş !komut (
+        -kaynak: rejoin ["while [" -koşulkaynak "] [" -kaynak "]"]
+      )
+    | !küçükmü (-koşulkaynak: copy -kaynak) !boş "iken" !boş !komut (
+        -kaynak: rejoin ["while [" -koşulkaynak "] [" -kaynak "]"]
+      )
+  ]
+]

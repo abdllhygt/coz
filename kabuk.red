@@ -6,33 +6,40 @@ Red [
 	}
 ]
 
-print {
+print [{
   Coz Programlama Dili
-  0.0.9
+  0.1.2
 
-}
+}]
 
 tara: func [gelen][
   parse gelen [
-    !kapatma (çöz -paketdön)
-    | !hepsi (çöz -paketdön)
-    | !komut !son (çöz -paketdön)
-    | copy -değer !değişken !son  (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" değişkenkon -değer "^[[0m"])
-    | copy -dön !metin !son (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
-    | !metinbirleştirme !son (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
-    | copy -dön !sayı !son (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
-    | !değişkenatama !son (
-        çöz -paketdön print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -atan2 "^[[0m"]
-      )
-    | !isetek
-    | !keretek
-    | !karşılaştırma !son (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
-    | !işlem !son  (
-      -dön: replace -dön {`~} ""
-      print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" (math load -dön) "^[[0m"]
+    !kapat (do -kaynak)
+    | !değer !son (print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"])
+    | !isetek (do -kaynak)
+    | !ikentek (do -kaynak)
+    | !keretek (do -kaynak)
+    | !pencereYaz (do -kaynak)
+    | !dosyaYaz (do -kaynak)
+    | !yaz (do -kaynak)
+    | !pencereOku (do -kaynak)
+    | !dosyaOku (do -kaynak)
+    | !oku (do -kaynak)
+    | !değişkenAta !son (
+      do -kaynak
+      print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"]
     )
-    | !son
-    | (hataver/sözdizimi)
+    | !değişken !son (
+      -dön: do -değişkendön
+      if (type? -dön) = string! [
+        -dön: rejoin[{"} -dön {"}]
+      ]
+      if (type? -dön) = logic! [
+        if -dön [-dön: "doğru"]
+        unless -dön [-dön: "yanlış"]
+      ]
+      print rejoin["^[[35;1;1m==^[[0m ^[[36;1;3m" -dön "^[[0m"]
+    )
   ]
 ]
 
