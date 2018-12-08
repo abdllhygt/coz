@@ -55,7 +55,7 @@ Red[]
         -kaynak: "0"
         -dön: 0
       ][
-        -kaynak: rejoin["["-işlem "]"]
+        -kaynak: rejoin["math ["-işlem "]"]
         -dön: do -işlem
       ]
     )
