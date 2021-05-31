@@ -3,7 +3,7 @@ Red []
 etiketHariç: complement charset "<>"
 
 !işaretBelirle: [
-    !yaboşluk "<" copy _içi [some etiketHariç] ">" any !satır
+    "<" copy _içi [some etiketHariç] ">"
     (
         insert coz/işaretler/1 coz/sonbellek/1
         insert coz/işaretler/2 _içi

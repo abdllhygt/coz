@@ -23,7 +23,7 @@ tara: function [t [string!]][
             | !işlevBelirle
             | !işaretBelirle
             | !isim
-            | !isimBelirle
+            ;| !isimBelirle
             | !boşluk
             | senaryo
         ] ;any
