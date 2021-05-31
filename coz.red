@@ -7,6 +7,9 @@ Red [
 #include %veri.red
 #include %malzeme.red
 #include %tarama/tara.red
+#include %köprü.red
+
+tara read %coz.coz
 
 either system/options/args/1 [
     tara read rejoin[%./ system/options/args/1]
