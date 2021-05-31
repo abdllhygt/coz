@@ -1,8 +1,9 @@
 Red []
 
-ayrıİşaretler: blokAyır coz/işaretler/1
-
 !işaret: [
+    (
+        ayrıİşaretler: blokAyır coz/işaretler/1
+    )
     copy _işaret ayrıİşaretler 
     (
         _sıra: sıraBul _işaret coz/işaretler/1
