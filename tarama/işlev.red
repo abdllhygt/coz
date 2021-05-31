@@ -1,8 +1,9 @@
 Red []
 
-ayrıİşlevler: blokAyır coz/işlevler/1
-
-!işlev: [ (probe ayrıİşlevler)
+!işlev: [
+    (
+        ayrıİşlevler: blokAyır coz/işlevler/1
+    )
     copy _işlev ayrıİşlevler 
     (
         _sıra: sıraBul _işlev coz/işlevler/1

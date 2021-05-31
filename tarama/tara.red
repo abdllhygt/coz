@@ -20,10 +20,10 @@ tara: function [t [string!]][
             | !işlev
             | !an
             | !kırmızı
-            | !isimBelirle
             | !işlevBelirle
             | !işaretBelirle
             | !isim
+            ;| !isimBelirle
             | !boşluk
             | senaryo
         ] ;any

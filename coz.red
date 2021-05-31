@@ -1,6 +1,6 @@
 Red [
     title: "Coz"
-    version: "0.3.0"
+    version: "0.3.0test"
     author: "Abdullah Yiğiterol"
 ]
 
