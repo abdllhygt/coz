@@ -12,3 +12,13 @@ while [0 = 0] [
     tara ask ">> "
     probe coz
 ]
+
+comment [either system/options/args/1 [
+    gelen: read rejoin[%./ system/options/args/1]
+    #include %yorumlayici.red
+    ;do %yorumlayici.red
+][
+  kabukAktifMi: true
+  #include %kabuk.red
+  ;do %kabuk.red
+]]
