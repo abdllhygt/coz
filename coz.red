@@ -1,34 +1,14 @@
 Red [
-  Title:   "COZ"
-	Author:  "Abdullah Yiğiterol"
-	License: {
-		Şuan yok
-	}
-  Needs: 'View
+    title: "Coz"
+    version: "0.3.0"
+    author: "Abdullah Yiğiterol"
 ]
 
-;#include %environment/console/CLI/input.red
-;#include %dynamic-ask.red
+#include %veri.red
+#include %malzeme.red
+#include %tarama/tara.red
 
-#include %zenity.red
-#include %parcalar.red
-#include %cozut.red
-
-;do %zenity.red
-
-;do %paketle.red
-;do %coez.red
-;do %bellek.red
-;do %parcalar.red
-;do %cozut.red
-
-kabukAktifMi: false
-either system/options/args/1 [
-    gelen: read rejoin[%./ system/options/args/1]
-    #include %yorumlayici.red
-    ;do %yorumlayici.red
-][
-  kabukAktifMi: true
-  #include %kabuk.red
-  ;do %kabuk.red
+while [0 = 0] [
+    tara ask ">> "
+    probe coz
 ]
