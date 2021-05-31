@@ -10,6 +10,7 @@ Red [
 #include %köprü.red
 
 tara read %coz.coz
+probe coz
 
 either system/options/args/1 [
     tara read rejoin[%./ system/options/args/1]

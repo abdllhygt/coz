@@ -13,7 +13,7 @@ Red []
 
 tara: function [t [string!]][
     sonuç: parse t [
-        any senaryo: [
+        senaryo: any [
             "x" (quit)
             | !satır
             | !işaret
@@ -25,6 +25,7 @@ tara: function [t [string!]][
             | !işlevBelirle
             | !işaretBelirle
             | !boşluk
+            | senaryo
         ] ;any
     ] ;parse
     print sonuç
