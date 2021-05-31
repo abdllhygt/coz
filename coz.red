@@ -8,17 +8,12 @@ Red [
 #include %malzeme.red
 #include %tarama/tara.red
 
-while [0 = 0] [
-    tara ask ">> "
-    probe coz
-]
-
-comment [either system/options/args/1 [
-    gelen: read rejoin[%./ system/options/args/1]
-    #include %yorumlayici.red
-    ;do %yorumlayici.red
+either system/options/args/1 [
+    tara read rejoin[%./ system/options/args/1]
 ][
-  kabukAktifMi: true
-  #include %kabuk.red
-  ;do %kabuk.red
-]]
+    print "Coz 0.3.0" print 
+    while [0 = 0] [
+        tara ask ">> "
+        probe coz
+    ]
+]
