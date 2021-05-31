@@ -1,6 +1,7 @@
 Red []
 
-blokAyır: function [b [block!]] [
+blokAyır: function [blok [block!] /local b] [
+    b: copy blok
     either (length? b) > 0 [
         forall b [if not last? b [b: next b insert b '|]]
         return b

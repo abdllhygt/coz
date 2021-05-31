@@ -18,12 +18,12 @@ tara: function [t [string!]][
             | !satır
             | !işaret
             | !işlev
-            | !isim
             | !an
             | !kırmızı
             | !isimBelirle
             | !işlevBelirle
             | !işaretBelirle
+            | !isim
             | !boşluk
             | senaryo
         ] ;any
