@@ -1,6 +1,6 @@
 Red [
     title: "Coz"
-    version: "0.3.0test"
+    version: "0.3.0test1"
     author: "Abdullah Yiğiterol"
 ]
 
@@ -10,15 +10,22 @@ Red [
 #include %köprü.red
 
 tara read %coz.coz
-probe coz
-coz/satır: 0
 
 either system/options/args/1 [
-    tara read rejoin[%./ system/options/args/1]
+    either system/options/args/1 = "test" [
+        print coz/versiyon
+        probe coz
+        while [0 = 0] [
+            tara ask ">> "
+            probe coz
+        ]
+    ][
+        tara read rejoin[%./ system/options/args/1]
+    ]
 ][
-    print "Coz 0.3.0" print 
+    coz/satır: 0
+    print coz/versiyon 
     while [0 = 0] [
         tara ask ">> "
-        probe coz
     ]
 ]
