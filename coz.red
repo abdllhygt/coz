@@ -11,6 +11,7 @@ Red [
 
 tara read %coz.coz
 probe coz
+coz/satır: 0
 
 either system/options/args/1 [
     tara read rejoin[%./ system/options/args/1]
