@@ -28,7 +28,7 @@ tara: function [t [string!]][
             | senaryo
         ] ;any
     ] ;parse
-    if either system/options/args/1 = "test" [
+    if system/options/args/1 = "test" [
         print sonuç
     ]
 ]
