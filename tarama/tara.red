@@ -13,9 +13,8 @@ Red []
 
 tara: function [t [string!]][
     sonuç: parse t [
-        senaryo: any [
-            "x" (quit)
-            | !satır
+        any [
+            !satır
             | !işaret
             | !işlev
             | !an
@@ -25,7 +24,6 @@ tara: function [t [string!]][
             | !isim
             ;| !isimBelirle
             | !boşluk
-            | senaryo
         ] ;any
     ] ;parse
     if system/options/args/1 = "test" [
