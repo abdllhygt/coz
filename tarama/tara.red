@@ -22,11 +22,15 @@ tara: function [t [string!]][
             | !işlevBelirle
             | !işaretBelirle
             | !isim
-            ;| !isimBelirle
             | !boşluk
+            | !isimBelirle
         ] ;any
     ] ;parse
     if system/options/args/1 = "test" [
-        print sonuç
+        either sonuç [
+            print "doğru"
+        ][
+            print "yanlış"
+        ]
     ]
 ]
