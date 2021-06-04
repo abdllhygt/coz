@@ -7,6 +7,7 @@ Red [
 #include %malzeme.red
 #include %tarama/tara.red
 #include %köprü.red
+#include %renkler.red
 
 tara read %coz.coz
 
