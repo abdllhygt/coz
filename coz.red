@@ -16,7 +16,7 @@ either system/options/args/1 [
         prin "Coz " print coz/versiyon print ""
         probe coz
         while [0 = 0] [
-            tara ask rejoin [yazırengi/mavi ">> " yazırengi/normal]
+            tara ask rejoin [yazırengi/kırmızı ">> " yazırengi/sade]
             probe coz
         ]
     ][
@@ -26,6 +26,6 @@ either system/options/args/1 [
     coz/satır: 0
     prin "Coz " print coz/versiyon print ""
     while [0 = 0] [
-        tara ask ">> " rejoin [yazırengi/mavi ">> " yazırengi/normal]
+        tara ask rejoin [yazırengi/sarı ">> " yazırengi/sade]
     ]
 ]
