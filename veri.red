@@ -3,7 +3,7 @@ Red [
 ]
 
 coz: context [
-    versiyon: "0.3.test1"
+    versiyon: "0.3.test2"
 
     isimler: [
         []

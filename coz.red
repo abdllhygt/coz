@@ -1,6 +1,5 @@
 Red [
     title: "Coz"
-    version: "0.3.0test1"
     author: "Abdullah Yiğiterol"
 ]
 
@@ -13,7 +12,7 @@ tara read %coz.coz
 
 either system/options/args/1 [
     either system/options/args/1 = "test" [
-        print coz/versiyon
+        prin "Coz " print coz/versiyon 
         probe coz
         while [0 = 0] [
             tara ask ">> "
