@@ -24,3 +24,11 @@ olsun: function[/local sıra][
         ]
     ]
 ]
+
+ise: function[/local birinci ikinci][
+    either (type? sonbellek/1) = block! [
+        ikinci: sonbellek/1/2
+    ][
+        ikinci: sonbellek/1
+    ]
+]

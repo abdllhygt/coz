@@ -5,6 +5,8 @@ tırnakHariç: complement charset {"}
 !an: [
     {"} copy _içi [some tırnakHariç] {"}
     (
-        insert coz/sonbellek _içi
+        ;if coz/durum = "doğru" [
+            insert coz/sonbellek _içi
+        ;]
     )
 ]

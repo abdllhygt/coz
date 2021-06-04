@@ -3,16 +3,20 @@ Red []
 isimKarakteri: complement charset {"{}<>[]}
 
 !isimBelirle: [
-    !yaboşluk copy _isim [some isimKarakteri] to [!satır | !boşluk !isim | !işaret | !boşluk !işlev | !yaboşluk !satır]
+    !yaboşluk copy _isim [some isimKarakteri] to [!satır | !isim | !an | !işaret | !işlev | !yaboşluk !satır]
     (
-        insert coz/isimler/1 _isim
-        insert coz/isimler/2 _isim
+        if coz/durum = "doğru" [
+            insert coz/isimler/1 (trim _isim)
+            insert coz/isimler/2 (trim _isim)
 
-        dönen: copy []
+            dönen: copy []
 
-        insert dönen _isim
-        insert dönen _isim
+            insert dönen _isim
+            insert dönen _isim
 
-        insert/only coz/sonbellek dönen
+            insert/only coz/sonbellek dönen
+        ]
+
+        
     )
 ]

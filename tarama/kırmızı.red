@@ -3,6 +3,8 @@ Red []
 !kırmızı: [
     "!"
     (
-        do coz/sonbellek/1
+        ;if coz/durum = "doğru" [
+            do coz/sonbellek/1
+        ;]
     )
 ]
