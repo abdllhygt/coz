@@ -26,9 +26,20 @@ olsun: function[/local sıra][
 ]
 
 ise: function[/local birinci ikinci][
-    either (type? sonbellek/1) = block! [
-        ikinci: sonbellek/1/2
+    remove coz/sonbellek
+    either (type? coz/sonbellek/1) = block! [
+        ikinci: coz/sonbellek/1/2
     ][
-        ikinci: sonbellek/1
+        ikinci: coz/sonbellek/1
+    ]
+    either (type? coz/sonbellek/2) = block! [
+        birinci:  coz/sonbellek/2/2
+    ][
+        birinci:  coz/sonbellek/2
+    ]
+    either birinci = ikinci [
+        coz/durum: "doğru"
+    ][
+        coz/durum: "yanlış"
     ]
 ]
