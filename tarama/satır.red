@@ -1,7 +1,7 @@
 Red []
 
 !satır: [
-    [newline | end | "^M"]
+    [newline | end | "^M" | "^/"]
     (
         coz/satır: coz/satır + 1
     )

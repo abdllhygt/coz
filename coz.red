@@ -14,7 +14,10 @@ testiMi?: false
 tara read %coz.coz
 
 either system/options/args/1 [
-    tara read rejoin[%./ system/options/args/1]
+    dosya: read/lines rejoin[%./ system/options/args/1]
+    foreach d dosya [
+        tara d
+    ]
 ][
     coz/satır: 0
     prin "Coz " print coz/versiyon print ""
