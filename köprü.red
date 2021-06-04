@@ -2,7 +2,11 @@ Red []
 
 yaz: function [][
     remove coz/sonbellek
-    print coz/sonbellek/1
+    either (type? coz/sonbellek/1) = block! [
+        print coz/sonbellek/1/2
+    ][
+        print coz/sonbellek/1
+    ]
 ]
 
 kapat: function [][
