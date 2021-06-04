@@ -16,7 +16,7 @@ kapat: function [][
 olsun: function[/local sıra][
     remove coz/sonbellek
     if (type? coz/sonbellek/2) = block! [
-        sıra: sıraBul coz/sonbellek/2/1 coz/isimler/1 print sıra
+        sıra: sıraBul coz/sonbellek/2/1 coz/isimler/1
         either (type? coz/sonbellek/1) = block! [
             coz/isimler/2/(sıra): coz/sonbellek/1/2
         ][
