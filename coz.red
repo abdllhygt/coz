@@ -12,10 +12,10 @@ tara read %coz.coz
 
 either system/options/args/1 [
     either system/options/args/1 = "test" [
-        prin "Coz " print coz/versiyon 
+        prin "Coz " print coz/versiyon print ""
         probe coz
         while [0 = 0] [
-            tara ask ">> "
+            tara ask rejoin [yazırengi/mavi ">> " yazırengi/normal]
             probe coz
         ]
     ][
@@ -23,8 +23,8 @@ either system/options/args/1 [
     ]
 ][
     coz/satır: 0
-    print coz/versiyon 
+    prin "Coz " print coz/versiyon print ""
     while [0 = 0] [
-        tara ask ">> "
+        tara ask ">> " rejoin [yazırengi/mavi ">> " yazırengi/normal]
     ]
 ]
