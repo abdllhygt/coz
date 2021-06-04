@@ -8,5 +8,6 @@ isimKarakteri: complement charset {"{}<>[]}
         insert coz/isimler/1 _isim
         insert coz/isimler/2 _isim
         insert coz/sonbellek _isim
+        insert coz/sonbellek _isim
     )
 ]
