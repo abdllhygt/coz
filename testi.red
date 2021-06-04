@@ -1,7 +1,10 @@
 Red []
 
+ _save-cfg: ""
+ 
 testiMi?: true
 
+#include %../red-master/environment/console/CLI/input.red
 #include %veri.red
 #include %malzeme.red
 #include %tarama/tara.red
