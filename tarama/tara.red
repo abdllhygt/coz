@@ -26,11 +26,11 @@ tara: function [t [string!]][
             | !isimBelirle
         ] ;any
     ] ;parse
-    if system/options/args/1 = "test" [
+    if testiMi? [
         either sonuç [
-            print "doğru"
+            print [yazırengi/yeşil "doğru" yazıRengi/sade]
         ][
-            print "yanlış"
+            print [yazırengi/kırmızı "yanlış" yazıRengi/sade]
         ]
     ]
 ]

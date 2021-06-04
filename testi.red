@@ -1,5 +1,7 @@
 Red []
 
+testiMi?: true
+
 #include %veri.red
 #include %malzeme.red
 #include %tarama/tara.red

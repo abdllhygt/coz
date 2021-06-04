@@ -3,6 +3,8 @@ Red [
     author: "Abdullah Yiğiterol"
 ]
 
+testiMi?: false
+
 #include %veri.red
 #include %malzeme.red
 #include %tarama/tara.red
