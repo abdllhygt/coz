@@ -1,8 +1,9 @@
 Red []
 
-ayrıİsimler: blokAyır coz/isimler/1
-
 !isim: [
+    (
+        ayrıİsimler: blokAyır coz/isimler/1
+    )
     copy _isim ayrıİsimler 
     (
         _sıra: sıraBul _isim coz/isimler/1
