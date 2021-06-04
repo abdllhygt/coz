@@ -8,7 +8,7 @@ yazıRengi: context [
     mavi: "^[[0;34m"
     pembe: "^[[0;35m"
     açıkMavi: "^[[0;36m"
-    normal: "^[[0m"
+    sade: "^[[0m"
 ]
 
 arkaRengi: context [
@@ -19,5 +19,5 @@ arkaRengi: context [
     mavi: "^[[0;44m"
     pembe: "^[[0;45m"
     açıkMavi: "^[[0;46m"
-    normal: "^[[0m"
+    sade: "^[[0m"
 ]
