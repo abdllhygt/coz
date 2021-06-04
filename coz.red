@@ -1,6 +1,7 @@
 Red [
     title: "Coz"
     author: "Abdullah Yiğiterol"
+    needs: 'view
 ]
 
  _save-cfg: ""

@@ -1,7 +1,9 @@
-Red []
+Red [
+    needs: 'view
+]
 
  _save-cfg: ""
- 
+
 testiMi?: true
 
 #include %../red-master/environment/console/CLI/input.red
