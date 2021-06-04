@@ -3,6 +3,8 @@ Red [
     author: "Abdullah Yiğiterol"
 ]
 
+ _save-cfg: ""
+
 testiMi?: false
 
 #include %../red-master/environment/console/CLI/input.red
