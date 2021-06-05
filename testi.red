@@ -47,6 +47,7 @@ coz/satır: 0
 prin "Coz " print coz/versiyon print " (Test Aracı)"
 do sergile
 while [0 = 0] [
-    tara ask rejoin [yazırengi/kırmızı ">> " yazırengi/sade]
+    prin rejoin [yazırengi/kırmızı ">> " yazırengi/sade]
+    tara ask ""
     do sergile
 ]
