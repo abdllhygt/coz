@@ -1,15 +1,15 @@
 Red []
 
-#include %boşluk.red
+#include %bosluk.red
 #include %isim.red
-#include %işaret.red
-#include %işlev.red
+#include %isaret.red
+#include %islev.red
 #include %an.red
-#include %satır.red
-#include %kırmızı.red
+#include %satir.red
+#include %kirmizi.red
 #include %isimBelirle.red
-#include %işlevBelirle.red
-#include %işaretBelirle.red
+#include %islevBelirle.red
+#include %iaretBelirle.red
 
 tara: function [t [string!]][
     sonuç: parse t [

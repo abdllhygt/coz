@@ -12,7 +12,7 @@ testiMi?: false
 #include %veri.red
 #include %malzeme.red
 #include %tarama/tara.red
-#include %köprü.red
+#include %kopru.red
 #include %renkler.red
 
 tara read %coz.coz
