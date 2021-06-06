@@ -1,0 +1,6 @@
+"topla" {"print (to integer! coz/sonbellek/3/1) + (to integer! coz/sonbellek/2/1)" ! }
+
+1
+2
+topla
+
