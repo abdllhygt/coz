@@ -1,7 +1,6 @@
 Red []
 
 yaz: function [][
-    remove coz/sonbellek
     either (type? coz/sonbellek/1) = block! [
         print coz/sonbellek/1/2
     ][
@@ -14,7 +13,6 @@ kapat: function [][
 ]
 
 olsun: function[/local sıra][
-    remove coz/sonbellek
     if (type? coz/sonbellek/2) = block! [
         sıra: sıraBul coz/sonbellek/2/1 coz/isimler/1
         either (type? coz/sonbellek/1) = block! [
@@ -26,7 +24,6 @@ olsun: function[/local sıra][
 ]
 
 ise: function[/local birinci ikinci][
-    remove coz/sonbellek
     either (type? coz/sonbellek/1) = block! [
         ikinci: coz/sonbellek/1/2
     ][
