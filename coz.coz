@@ -1,9 +1,9 @@
 "yaz" {
-    "yaz" !
+    [yaz]
 }
 
 "kapat" {
-    "kapat" !
+    [kapat]
 }
 
 "." <
@@ -12,9 +12,9 @@
 >
 
 "olsun" {
-    "olsun" !
+    [olsun]
 }
 
 "ise" {
-    "ise" !
+    [ise]
 }
