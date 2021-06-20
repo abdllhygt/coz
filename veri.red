@@ -22,6 +22,8 @@ coz: context [
 
     durum: "doğru"
 
+    döngü: 1
+
     sonbellek: []
 
     satır: 0
