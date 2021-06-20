@@ -78,3 +78,7 @@ sıfırla: function [][
     
     coz/satır: 0
 ]
+
+kere: function[][
+    coz/döngü: to integer! coz/sonbellek
+]
