@@ -47,7 +47,11 @@ coz/satır: 0
 prin "Coz " print coz/versiyon print " (Test Aracı)"
 do sergile
 while [0 = 0] [
-    prin rejoin [yazırengi/kırmızı ">> " yazırengi/sade]
-    tara ask ""
+    either system/build/config/os = 'Linux [
+            tara ask rejoin [yazırengi/sarı ">> " yazırengi/sade]
+    ][
+            prin rejoin [yazırengi/sarı ">> " yazırengi/sade]
+            tara ask ""
+    ]
     do sergile
 ]
