@@ -44,3 +44,18 @@ ise: function[/local birinci ikinci][
 sonbelleğiTemizle: function [][
     clear coz/sonbellek
 ]
+
+kaçEder: function [/local işlem][
+    either (type? coz/sonbellek/1) = block! [
+        işlem: coz/sonbellek/1/2
+    ][
+        işlem: coz/sonbellek/1
+    ]
+    işlem: replace/all işlem "+" " + "
+    işlem: replace/all işlem "-" " - "
+    işlem: replace/all işlem "*" " * "
+    işlem: replace/all işlem "/" " / "
+    işlem: do işlem
+    sonbelleğeEkle işlem
+    yaz
+]

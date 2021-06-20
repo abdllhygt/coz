@@ -13,3 +13,7 @@ blokAyır: function [blok [block!] /local b] [
 sıraBul: function [i a [block!]] [
     return (length? a) - (length? find a i) + 1
 ]
+
+sonbelleğeEkle: function [e][
+    insert coz/sonbellek e
+]
