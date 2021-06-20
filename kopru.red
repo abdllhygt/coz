@@ -43,7 +43,7 @@ ise: function[/local birinci ikinci][
 
 sonbelleğiTemizle: function [][
     coz/döngü: 1
-    coz/sondurum: "doğru" 
+    coz/durum: "doğru" 
     clear coz/sonbellek
 ]
 
