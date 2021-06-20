@@ -40,3 +40,7 @@ ise: function[/local birinci ikinci][
         coz/durum: "yanlış"
     ]
 ]
+
+sonbelleğiTemizle: function [][
+    clear coz/sonbellek
+]
