@@ -59,3 +59,20 @@ kaçEder: function [/local işlem][
     sonbelleğeEkle işlem
     yaz
 ]
+
+sıfırla: function [][
+    clear coz/isimler/1
+    clear coz/isimler/2
+
+    clear coz/işaretler/1
+    clear coz/işaretler/2
+
+    clear coz/işlevler/1
+    clear coz/işlevler/2
+
+    coz/durum: "doğru"
+
+    clear coz/sonbellek
+    
+    coz/satır: 0
+]
