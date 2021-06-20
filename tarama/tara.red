@@ -9,7 +9,7 @@ Red []
 #include %kirmizi.red
 #include %isimBelirle.red
 #include %islevBelirle.red
-#include %iaretBelirle.red
+#include %isaretBelirle.red
 
 tara: function [t [string!]][
     sonuç: parse t [
