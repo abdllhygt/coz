@@ -42,6 +42,8 @@ ise: function[/local birinci ikinci][
 ]
 
 sonbelleğiTemizle: function [][
+    coz/döngü: 1
+    coz/sondurum: "doğru" 
     clear coz/sonbellek
 ]
 
