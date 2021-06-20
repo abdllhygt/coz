@@ -72,6 +72,8 @@ sıfırla: function [][
 
     coz/durum: "doğru"
 
+    tara read %coz.coz
+
     clear coz/sonbellek
     
     coz/satır: 0
