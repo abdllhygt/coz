@@ -10,6 +10,7 @@ Red []
 #include %isimBelirle.red
 #include %islevBelirle.red
 #include %isaretBelirle.red
+#include %kopru.red
 
 tara: function [t [string!]][
     sonuç: parse t [
@@ -17,6 +18,7 @@ tara: function [t [string!]][
             !satır
             | !işaret
             | !işlev
+            | !kopru
             | !an
             | !kırmızı
             | !işlevBelirle
