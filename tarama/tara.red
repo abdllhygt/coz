@@ -18,7 +18,7 @@ tara: function [t [string!]][
             !satır
             | !işaret
             | !işlev
-            | !kopru
+            | !köprü
             | !an
             | !kırmızı
             | !işlevBelirle
