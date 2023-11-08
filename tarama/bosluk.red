@@ -1,7 +1,3 @@
 Red []
 
-!birboşluk: [space]
-
-!boşluk: [some !birboşluk]
-
-!yaboşluk: [any !birboşluk]
+_bosluk: [some space]

@@ -1,30 +1,16 @@
-Red [
+Red []
 
-]
+COZ: context [
+    VERSIYON: "0.4.test1"
 
-coz: context [
-    versiyon: "0.3.test4"
-
-    isimler: [
+    DEGISKEN: [
         []
         []
     ]
 
-    işaretler: [
-        []
-        []
-    ]
+    SONBELLEK: []
 
-    işlevler: [
-        []
-        []
-    ]
+    SATIR: 0
 
-    durum: "doğru"
-
-    döngü: 1
-
-    sonbellek: []
-
-    satır: 0
+    LIMIT: 5
 ]

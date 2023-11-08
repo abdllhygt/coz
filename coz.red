@@ -1,21 +1,12 @@
 Red [
     title: "Coz"
     author: "Abdullah Yiğiterol"
-    needs: 'view
+    version: 0.4.0
 ]
 
- _save-cfg: ""
-
-testiMi?: false
-
-#include %../red-master/environment/console/CLI/input.red
 #include %veri.red
 #include %malzeme.red
 #include %tarama/tara.red
-#include %kopru.red
-#include %renkler.red
-
-tara read %coz.coz
 
 either system/options/args/1 [
     dosya: read/lines rejoin[%./ system/options/args/1]
@@ -23,13 +14,14 @@ either system/options/args/1 [
         tara d
     ]
 ][
-    coz/satır: 0
-    prin "Coz " print coz/versiyon print ""
+    prin "Coz " print coz/versiyon print "^[[0;34m2018-2023"
     while [0 = 0] [
         either (to string! system/build/config/os) = "Linux" [
-            tara ask rejoin [yazırengi/sarı ">> " yazırengi/sade]
+            tara komut: ask rejoin ["^[[0;33m" ">> " "^[[0m"]
+            if komut = "kapat" [quit]
+            print coz
         ][
-            prin rejoin [yazırengi/sarı ">> " yazırengi/sade]
+            prin rejoin ["^[[0;33m" ">> " "^[[0m"]
             tara ask ""
         ]
     ]
