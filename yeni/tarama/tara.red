@@ -6,6 +6,7 @@ Red []
 #include %sayi.red
 #include %bosluk.red
 #include %olsun.red
+#include %degisken.red
 
 tara: function[t [string!]][
     parse t [
@@ -14,6 +15,7 @@ tara: function[t [string!]][
             | _dizgi
             | _kume
             | _SAYI
+            | _degisken
             | _olsun
             | _bosluk
         ]

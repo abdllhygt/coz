@@ -10,6 +10,6 @@ BLOK_AYIR: function [blok [block!] /local b] [
     ]
 ]
 
-SIRA_BUL: function [i a [block!]] [
+SIRA_BUL: function [a [block!] i] [
     return (length? a) - (length? find a i) + 1
 ]
