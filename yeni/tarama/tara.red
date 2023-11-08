@@ -12,11 +12,11 @@ tara: function[t [string!]][
     parse t [
         any [
             _SATIR
+            | _olsun
             | _dizgi
             | _kume
             | _SAYI
             | _degisken
-            | _olsun
             | _bosluk
         ]
     ]

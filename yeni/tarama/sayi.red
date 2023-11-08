@@ -5,6 +5,6 @@ _SAYI09: charset "0123456789"
 
 _SAYI: [
     copy c_s [_SAYI19 any _SAYI09] (
-        insert coz/sonbellek to integer! c_s
+        SONBELLEKLE to integer! c_s
     )
 ]

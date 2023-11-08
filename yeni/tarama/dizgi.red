@@ -5,6 +5,6 @@ _metin: [any _harf]
 
 _dizgi: [
     {"} copy c_m _metin {"} ( 
-        insert coz/sonbellek c_m ;append
+        SONBELLEKLE c_m ;append
     ) 
 ]
