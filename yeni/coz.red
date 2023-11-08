@@ -5,6 +5,7 @@ Red [
 ]
 
 #include %veri.red
+#include %malzeme.red
 #include %tarama/tara.red
 
 either system/options/args/1 [
