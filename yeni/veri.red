@@ -11,4 +11,6 @@ COZ: context [
     SONBELLEK: []
 
     SATIR: 0
+
+    LIMIT: 5
 ]
