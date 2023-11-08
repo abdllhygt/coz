@@ -13,7 +13,7 @@ either system/options/args/1 [
         tara d
     ]
 ][
-    prin "Coz " print coz/versiyon print ""
+    prin "Coz " print coz/versiyon print "^[[0;34m2018-2023"
     while [0 = 0] [
         either (to string! system/build/config/os) = "Linux" [
             tara komut: ask rejoin ["^[[0;33m" ">> " "^[[0m"]
