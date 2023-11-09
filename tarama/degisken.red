@@ -5,9 +5,9 @@ _degisken: [
     copy c_a _AYRI_DEGISKEN
     (
         either (type? coz/degisken/2/(SIRA_BUL coz/degisken/1 c_a)) = block! [
-            ;to string! coz/degisken/2/(SIRA_BUL coz/degisken/1 c_a)
+            tara replace (remove mold coz/degisken/2/(SIRA_BUL coz/degisken/1 c_a)) "[" []
         ][
             SONBELLEKLE coz/degisken/2/(SIRA_BUL coz/degisken/1 c_a)
         ]
     )
-] 
+]

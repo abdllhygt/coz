@@ -18,8 +18,7 @@ either system/options/args/1 [
     prin "Coz " print coz/versiyon print "^[[0;34m2018-2023"
     while [0 = 0] [
         either (to string! system/build/config/os) = "Linux" [
-            tara komut: ask rejoin ["^[[0;33m" ">> " "^[[0m"]
-            if komut = "kapat" [quit]
+            tara ask rejoin ["^[[0;33m" ">> " "^[[0m"]
             print coz
         ][
             prin rejoin ["^[[0;33m" ">> " "^[[0m"]

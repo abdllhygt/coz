@@ -12,12 +12,14 @@ tara: function[t [string!]][
     parse t [
         any [
             _SATIR
+            | _kume
             | _olsun
             | _dizgi
-            | _kume
             | _SAYI
             | _degisken
             | _bosluk
+            | "kapat" (quit)
+            | skip
         ]
     ]
 ]
