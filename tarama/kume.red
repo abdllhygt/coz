@@ -2,6 +2,8 @@ Red []
 
 _kume: [
     copy c_k ["[" thru "]"] (
-        SONBELLEKLE to block! c_k
+        kume_: copy []
+        insert kume_ c_k
+        SONBELLEKLE kume_
     )
 ]

@@ -4,8 +4,8 @@ COZ: context [
     VERSIYON: "0.4.test1"
 
     DEGISKEN: [
-        []
-        []
+        ["coz"]
+        ["coz"]
     ]
 
     SONBELLEK: []

@@ -4,6 +4,10 @@ _degisken: [
     (_AYRI_DEGISKEN: BLOK_AYIR coz/degisken/1) 
     copy c_a _AYRI_DEGISKEN
     (
-        SONBELLEKLE coz/degisken/2/(SIRA_BUL coz/degisken/1 c_a)
+        either (type? coz/degisken/2/(SIRA_BUL coz/degisken/1 c_a)) = block! [
+            ;to string! coz/degisken/2/(SIRA_BUL coz/degisken/1 c_a)
+        ][
+            SONBELLEKLE coz/degisken/2/(SIRA_BUL coz/degisken/1 c_a)
+        ]
     )
 ] 

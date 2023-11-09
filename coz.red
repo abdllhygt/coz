@@ -4,6 +4,7 @@ Red [
     version: 0.4.0
 ]
 
+#include %red-common/search.red
 #include %veri.red
 #include %malzeme.red
 #include %tarama/tara.red
