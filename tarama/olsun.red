@@ -8,22 +8,22 @@ _olsun: ["olsun" (
     ][
         either (length? coz/degisken/1) < 2 [ ;false
             either (length? coz/degisken/1) = 0 [
-                insert coz/degisken/1 coz/sonbellek/2
-                insert coz/degisken/2 coz/sonbellek/1
+                insert/only coz/degisken/1 coz/sonbellek/2
+                insert/only coz/degisken/2 coz/sonbellek/1
             ][
                 either (length? coz/sonbellek/2) > (length? coz/degisken/1/1)[
-                    insert coz/degisken/1 coz/sonbellek/2
-                    insert coz/degisken/2 coz/sonbellek/1
+                    insert/only coz/degisken/1 coz/sonbellek/2
+                    insert/only coz/degisken/2 coz/sonbellek/1
                 ][
-                    append coz/degisken/1 coz/sonbellek/2
-                    append coz/degisken/2 coz/sonbellek/1
+                    append/only coz/degisken/1 coz/sonbellek/2
+                    append/only coz/degisken/2 coz/sonbellek/1
                 ]
             ]
-        ][
+        ][  
             set [i1: len1: i2: len2:]
             search/for i: 1 length? coz/degisken/1 [length? coz/degisken/1/:i] length? coz/sonbellek/2
-            insert at coz/degisken/1 i2 coz/sonbellek/2
-            insert at coz/degisken/2 i2 coz/sonbellek/1
+            insert/only at coz/degisken/1 i2 coz/sonbellek/2
+            insert/only at coz/degisken/2 i2 coz/sonbellek/1
             ;coz/degisken/1: copy coz/degisken/1
             ;coz/degisken/2: copy coz/degisken/2
             comment {
