@@ -5,7 +5,7 @@ YAZ: function [][
 ]
 
 OKU: function [][
-    insert/only coz/sonbellek _okunan: copy (ask "^[[0;31m> ^[[0;36m")
+    insert/only coz/sonbellek _okunan: copy (ask "^[[0;31m> ^[[0;32m")
 ]
 
 TOPLA: function [][
