@@ -11,7 +11,6 @@ Red [
 #include %kopru.red
 
 tara read %coz.coz
-coz/SATIR: 0
 
 either system/options/args/1 [
     dosya: read/lines rejoin[%./ system/options/args/1]
@@ -19,7 +18,8 @@ either system/options/args/1 [
         tara d
     ]
 ][
-    prin "Coz " print coz/versiyon print "^[[0;34m2018-2023"
+    prin " Coz " print coz/versiyon print "^[[0;34m   2018-2023" print ""
+    coz/SATIR: 0
     while [0 = 0] [
         either (to string! system/build/config/os) = "Linux" [
             tara ask rejoin ["^[[0;33m" ">> " "^[[0m"]
