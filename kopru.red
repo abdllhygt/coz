@@ -11,3 +11,7 @@ TOPLA: function [][
 CIKAR: function[][
     insert coz/sonbellek (coz/sonbellek/2 - coz/sonbellek/1)
 ]
+
+BOL: function[][
+    insert coz/sonbellek (coz/sonbellek/2 / coz/sonbellek/1)
+]
