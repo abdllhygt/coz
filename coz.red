@@ -8,6 +8,9 @@ Red [
 #include %veri.red
 #include %malzeme.red
 #include %tarama/tara.red
+#include %kopru.red
+
+tara read %coz.coz
 
 either system/options/args/1 [
     dosya: read/lines rejoin[%./ system/options/args/1]
