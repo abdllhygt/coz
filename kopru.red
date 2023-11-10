@@ -4,6 +4,10 @@ YAZ: function [][
     print coz/sonbellek/1
 ]
 
+OKU: function [][
+    insert coz/sonbellek (ask "> ")
+]
+
 TOPLA: function [][
     insert coz/sonbellek (coz/sonbellek/1 + coz/sonbellek/2)
 ]
