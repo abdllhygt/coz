@@ -11,6 +11,7 @@ Red [
 #include %kopru.red
 
 tara read %coz.coz
+coz/SATIR: 0
 
 either system/options/args/1 [
     dosya: read/lines rejoin[%./ system/options/args/1]
@@ -22,10 +23,12 @@ either system/options/args/1 [
     while [0 = 0] [
         either (to string! system/build/config/os) = "Linux" [
             tara ask rejoin ["^[[0;33m" ">> " "^[[0m"]
-            print coz
         ][
             prin rejoin ["^[[0;33m" ">> " "^[[0m"]
             tara ask ""
         ]
+        prin "^[[0;36mson bellek: ^[[0m" probe coz/sonbellek
+        prin "^[[0;36msatır: ^[[0m" print coz/SATIR
+        prin "^[[0;36mlimit: ^[[0m" print coz/limit
     ]
 ]
