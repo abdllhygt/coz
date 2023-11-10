@@ -19,6 +19,7 @@ tara: function[t [string!]][
             | _degisken
             | _bosluk
             | "kapat" (quit)
+            | "!" (coz/sonbellek: copy reverse (remove reverse coz/sonbellek))
             | skip
         ]
     ]
