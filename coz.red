@@ -26,8 +26,8 @@ either system/options/args/1 [
             prin rejoin ["^[[0;33m" ">> " "^[[0m"]
             tara ask ""
         ]
-        prin "^[[0;36mson bellek: ^[[0m" probe coz/sonbellek
-        prin "^[[0;36msatır: ^[[0m" print coz/SATIR
-        prin "^[[0;36mlimit: ^[[0m" print coz/limit
+        prin "^[[3;36m^[[2m= " probe coz/sonbellek/1
+        ;prin "^[[0;36msatır: ^[[0m" print coz/SATIR
+        ;prin "^[[0;36mlimit: ^[[0m" print coz/limit
     ]
 ]
