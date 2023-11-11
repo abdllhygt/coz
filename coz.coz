@@ -22,4 +22,8 @@
     [insert coz/sonbellek (coz/sonbellek/2 / coz/sonbellek/1)] ilintile
 ] olsun
 
+"birleştir" [
+    [insert coz/sonbellek (rejoin [coz/sonbellek/2 coz/sonbellek/1])] ilintile
+] olsun
+
 0 0 0 0

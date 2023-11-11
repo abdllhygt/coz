@@ -5,8 +5,8 @@ _harf: complement charset {"[]}
 _kume: [
     copy c_k [
         "[" 
-            any [
-                ["[" thru "]"]
+            any copy c_b [
+                ["[" any ["[" c_b "]" | "[" thru "]" | [{"} thru {"}] | _harf] "]"]
                 | [{"} thru {"}]
                 | _harf
             ]
