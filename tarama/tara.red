@@ -8,6 +8,7 @@ Red []
 #include %olsun.red
 #include %degisken.red
 #include %ilinti.red
+#include %ata.red
 
 tara: function[t [string!]][
     parse t [
@@ -15,6 +16,7 @@ tara: function[t [string!]][
             _SATIR
             | _kume
             | _olsun
+            | _ata
             | _dizgi
             | _SAYI
             | _ilintile
