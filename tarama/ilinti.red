@@ -2,6 +2,8 @@ Red []
 
 _ilintile: [
     "ilintile" (
-        do coz/sonbellek/1
+        ilinti_: coz/sonbellek/1
+        remove coz/sonbellek
+        do ilinti_
     )
 ]

@@ -1,5 +1,5 @@
 "yaz" [
-    [print coz/sonbellek/2] ilintile
+    [print coz/sonbellek/1] ilintile
 ] olsun
 
 "oku" [
@@ -7,19 +7,19 @@
 ] olsun
 
 "topla" [
-    [insert coz/sonbellek (coz/sonbellek/2 + coz/sonbellek/3)] ilintile
+    [insert coz/sonbellek (coz/sonbellek/1 + coz/sonbellek/2)] ilintile
 ] olsun
 
 "çıkar" [
-    [insert coz/sonbellek (coz/sonbellek/3 - coz/sonbellek/2)] ilintile
+    [insert coz/sonbellek (coz/sonbellek/2 - coz/sonbellek/1)] ilintile
 ] olsun
 
 "çarp" [
-    [insert coz/sonbellek (coz/sonbellek/2 * coz/sonbellek/3)] ilintile
+    [insert coz/sonbellek (coz/sonbellek/1 * coz/sonbellek/2)] ilintile
 ] olsun
 
 "böl" [
-    [insert coz/sonbellek (coz/sonbellek/3 / coz/sonbellek/2)] ilintile
+    [insert coz/sonbellek (coz/sonbellek/2 / coz/sonbellek/1)] ilintile
 ] olsun
 
 0 0 0 0
