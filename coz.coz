@@ -36,4 +36,14 @@
     ] ilintile
 ] olsun
 
+"eşit değil" [
+    [
+        either coz/sonbellek/1 = coz/sonbellek/2 [
+            insert coz/sonbellek "yanlış"
+        ][
+            insert coz/sonbellek "doğru"
+        ]
+    ] ilintile
+] olsun
+
 0 0 0 0
