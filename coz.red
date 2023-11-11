@@ -8,7 +8,6 @@ Red [
 #include %veri.red
 #include %malzeme.red
 #include %tarama/tara.red
-#include %kopru.red
 
 tara read %coz.coz
 

@@ -1,25 +1,25 @@
 "yaz" [
-    [YAZ] ilintile
+    [print coz/sonbellek/2] ilintile
 ] olsun
 
 "oku" [
-    [OKU] ilintile
+    [insert/only coz/sonbellek _okunan: copy (ask "^[[0;31m> ^[[0;32m")] ilintile
 ] olsun
 
 "topla" [
-    [TOPLA] ilintile
+    [insert coz/sonbellek (coz/sonbellek/2 + coz/sonbellek/3)] ilintile
 ] olsun
 
 "çıkar" [
-    [CIKAR] ilintile
+    [insert coz/sonbellek (coz/sonbellek/3 - coz/sonbellek/2)] ilintile
 ] olsun
 
 "çarp" [
-    [CARP] ilintile
+    [insert coz/sonbellek (coz/sonbellek/2 * coz/sonbellek/3)] ilintile
 ] olsun
 
 "böl" [
-    [BOL] ilintile
+    [insert coz/sonbellek (coz/sonbellek/3 / coz/sonbellek/2)] ilintile
 ] olsun
 
 0 0 0 0
