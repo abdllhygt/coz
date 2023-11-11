@@ -26,4 +26,14 @@
     [insert coz/sonbellek (rejoin [coz/sonbellek/2 coz/sonbellek/1])] ilintile
 ] olsun
 
+"eşit" [
+    [
+        either coz/sonbellek/1 = coz/sonbellek/2 [
+            insert coz/sonbellek "doğru"
+        ][
+            insert coz/sonbellek "yanlış"
+        ]
+    ] ilintile
+] olsun
+
 0 0 0 0
