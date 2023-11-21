@@ -1,7 +1,7 @@
 Red []
 
 COZ: context [
-    VERSIYON: "0.4.test4"
+    VERSIYON: "0.4.test5"
 
     DEGISKEN: [
         ["z"]
