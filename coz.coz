@@ -46,4 +46,14 @@
     ] ilintile
 ] olsun
 
+"ise" [
+    [
+        unless coz/sonbellek/2 = "yanlış" [
+            if (type? coz/sonbellek/1) = block! [
+                tara reverse remove (reverse(remove mold coz/sonbellek/1))
+            ]
+        ]
+    ] ilintile
+] olsun
+
 0 0 0 0
