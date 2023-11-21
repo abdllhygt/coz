@@ -4,7 +4,7 @@ _SAYI19: charset "123456789"
 _SAYI09: charset "0123456789"
 
 _SAYI: [
-    copy c_s ["0" | [_SAYI19 any _SAYI09]] (
-        SONBELLEKLE to integer! c_s
+    copy c_s [["0" | _SAYI19 any _SAYI09] "." any _SAYI09 | "0" | [_SAYI19 any _SAYI09]] (
+        SONBELLEKLE to float! c_s
     )
 ]
