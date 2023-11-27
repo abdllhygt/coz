@@ -56,4 +56,10 @@
     ] ilintile
 ] olsun
 
+"ortada olsun" [
+    [
+        insert coz/ortac coz/sonbellek/1
+    ] ilintile
+] olsun
+
 0 0 0 0
