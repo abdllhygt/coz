@@ -10,6 +10,8 @@ COZ: context [
 
     ORTAC: []
 
+    DURAK: []
+
     SONBELLEK: []
 
     SATIR: 0
