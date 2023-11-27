@@ -1,12 +1,14 @@
 Red []
 
 _harf: complement charset {"[]}
+_fume: ["[" any [_harf | {"} thru {"} | _fume] "]"]
 
 _kume: [
     copy c_k [
         "[" 
             any [
-                "[" any [ _harf | {"} thru {"} | "[" any [_harf | {"} thru {"} | "[" thru "]"] "]"] "]"
+                _fume
+                ;"[" any [ _harf | {"} thru {"} | "[" any [_harf | {"} thru {"} | "[" thru "]"] "]"] "]"
                 | [{"} thru {"}]
                 | _harf
             ]
