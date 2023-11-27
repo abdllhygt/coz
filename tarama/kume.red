@@ -6,7 +6,7 @@ _kume: [
     copy c_k [
         "[" 
             any copy c_b [
-                ["[" any ["[" c_b "]" | "[" thru "]" | [{"} thru {"}] | _harf] "]"]
+                "[" any [ _harf | {"} thru {"} | "[" any [_harf | {"} thru {"} | "[" thru "]"] "]"] "]"
                 | [{"} thru {"}]
                 | _harf
             ]

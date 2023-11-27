@@ -19,7 +19,7 @@ _olsun: ["olsun" (
                     append/only coz/degisken/2 coz/sonbellek/1
                 ]
             ]
-        ][  
+        ][
             set [i1: len1: i2: len2:]
             search/for i: 1 length? coz/degisken/1 [length? coz/degisken/1/:i] length? coz/sonbellek/2
             insert/only at coz/degisken/1 i2 coz/sonbellek/2
