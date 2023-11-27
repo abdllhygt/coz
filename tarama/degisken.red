@@ -12,6 +12,10 @@ _degisken: [
             ]
         ][
             SONBELLEKLE coz/degisken/2/(SIRA_BUL coz/degisken/1 c_a)
+            if (length? coz/durak) > 0 [
+                tara coz/durak/1
+                remove coz/durak
+            ]
         ]
     )
 ]
