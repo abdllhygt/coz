@@ -8,6 +8,8 @@ COZ: context [
         ["coz"]
     ]
 
+    ORTAC: []
+
     SONBELLEK: []
 
     SATIR: 0
