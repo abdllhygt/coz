@@ -5,7 +5,11 @@ _degisken: [
     copy c_a _AYRI_DEGISKEN
     (
         either (type? coz/degisken/2/(SIRA_BUL coz/degisken/1 c_a)) = block! [
-            tara reverse remove (reverse(remove mold coz/degisken/2/(SIRA_BUL coz/degisken/1 c_a)))
+            either find coz/ortac c_a [
+                insert coz/durak c_a
+            ][
+                tara reverse remove (reverse(remove mold coz/degisken/2/(SIRA_BUL coz/degisken/1 c_a)))
+            ]
         ][
             SONBELLEKLE coz/degisken/2/(SIRA_BUL coz/degisken/1 c_a)
         ]
