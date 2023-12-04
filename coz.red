@@ -27,6 +27,9 @@ either system/options/args/1 [
             tara ask ""
         ]
         prin "^[[3;36m^[[2m= " probe coz/sonbellek/1
+        probe coz/sonbellek
+        probe coz/ortac
+        probe coz/durak
         ;prin "^[[0;36msatır: ^[[0m" print coz/SATIR
         ;prin "^[[0;36mlimit: ^[[0m" print coz/limit
     ]
