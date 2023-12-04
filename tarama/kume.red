@@ -20,8 +20,10 @@ _kume: [
             coz/sonbellek: reverse (remove reverse coz/sonbellek)
         ]
         if (length? coz/durak) > 0 [
-            tara reverse remove (reverse(remove mold coz/degisken/2/(SIRA_BUL coz/degisken/1 coz/durak/1)))
+            durak_: copy coz/durak/1
             clear coz/durak
+            tara reverse remove (reverse(remove mold coz/degisken/2/(SIRA_BUL coz/degisken/1 durak_)))
+            durak_: copy ""
         ]    
     )
 ]
