@@ -43,7 +43,18 @@
     ] ilintile
 ] olsun
 
+"ikisi de sayı" [
+    [
+        either (((type? coz/sonbellek/1) = float!) = true ) = ((type? coz/sonbellek/2) = float!) [
+            insert coz/sonbellek "doğru"
+        ][
+            insert coz/sonbellek "yanlış"
+        ]
+    ] ilintile
+] olsun
+
 "topla" [
+
     [insert coz/sonbellek (coz/sonbellek/1 + coz/sonbellek/2)] ilintile
 ] olsun
 
