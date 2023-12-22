@@ -64,4 +64,18 @@
 
 "ise" ortada olsun
 
+"olduğu sürece" [
+    [
+        _kosul: coz/sonbellek/2
+        _icerik: coz/sonbellek/1
+        tara reverse remove (reverse(remove mold _kosul))
+        while [(coz/sonbellek = "yanlış") = false] [
+            tara reverse remove (reverse(remove mold icerik))
+            tara reverse remove (reverse(remove mold _kosul))
+        ]
+    ] ilintile
+]
+
+"olduğu sürece" ortada olsun
+
 0 0 0 0
