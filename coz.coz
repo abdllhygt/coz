@@ -2,8 +2,13 @@
     [tara coz/sonbellek/1] ilintile
 ] olsun
 
+"dosyayı oku" [
+    [read rejoin [% coz/sonbellek/1]] ilintile
+] olsun
+
 "okuyup tara" [
-    []
+    dosyayı oku
+    tara
 ] olsun
 
 "cozut" [
