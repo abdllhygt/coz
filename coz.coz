@@ -69,12 +69,12 @@
         _kosul: coz/sonbellek/2
         _icerik: coz/sonbellek/1
         tara reverse remove (reverse(remove mold _kosul))
-        while [(coz/sonbellek = "yanlış") = false] [
-            tara reverse remove (reverse(remove mold icerik))
+        while [(coz/sonbellek/1 = "yanlış") = false] [
+            tara reverse remove (reverse(remove mold _icerik))
             tara reverse remove (reverse(remove mold _kosul))
         ]
     ] ilintile
-]
+] olsun
 
 "olduğu sürece" ortada olsun
 
