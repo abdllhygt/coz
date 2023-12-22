@@ -9,3 +9,7 @@
 "oku" [
     [insert/only coz/sonbellek _okunan: copy (ask "^[[0;31m> ^[[0;32m")] ilintile
 ] olsun
+
+"dosyayı oku" [
+    [read rejoin [% coz/sonbellek/1]] ilintile
+] olsun
