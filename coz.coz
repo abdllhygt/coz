@@ -78,4 +78,11 @@
 
 "olduğu sürece" ortada olsun
 
+"cozut" [
+    [
+        print rejoin ["^[[0;35m" "cozuttu... " "^[[0;31m" coz/sonbellek/1 "^[[0m"]
+    ] ilintile
+    kapat
+] olsun
+
 0 0 0 0
