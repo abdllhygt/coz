@@ -11,6 +11,8 @@
     tara
 ] olsun
 
+"giris_cikis.coz" okuyup tara
+
 "cozut" [
     [
         print rejoin ["^[[0;35m" "cozuttu... " "^[[0;31m" coz/sonbellek/1 "^[[0m"]
