@@ -23,6 +23,16 @@
     ] ilintile
 ] olsun
 
+"metin" [
+    [
+        either (type? coz/sonbellek/1) = string! [
+            insert coz/sonbellek "doğru"
+        ][
+            insert coz/sonbellek "yanlış"
+        ]
+    ] ilintile
+] olsun
+
 "topla" [
     [insert coz/sonbellek (coz/sonbellek/1 + coz/sonbellek/2)] ilintile
 ] olsun
