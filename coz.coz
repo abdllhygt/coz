@@ -15,42 +15,13 @@
 "turler.coz" okuyup tara
 "matematik.coz" okuyup tara
 "metin.coz" okuyup tara
+"karsilastirma.coz" okuyup tara
 
 "cozut" [
     [
         print rejoin ["^[[0;35m" "cozuttu... " "^[[0;31m" coz/sonbellek/1 "^[[0m"]
     ] ilintile
     kapat
-] olsun
-
-"eşit" [
-    [
-        either coz/sonbellek/1 = coz/sonbellek/2 [
-            insert coz/sonbellek "doğru"
-        ][
-            insert coz/sonbellek "yanlış"
-        ]
-    ] ilintile
-] olsun
-
-"eşit değil" [
-    [
-        either coz/sonbellek/1 = coz/sonbellek/2 [
-            insert coz/sonbellek "yanlış"
-        ][
-            insert coz/sonbellek "doğru"
-        ]
-    ] ilintile
-] olsun
-
-"ise" [
-    [
-        unless coz/sonbellek/2 = "yanlış" [
-            if (type? coz/sonbellek/1) = block! [
-                tara reverse remove (reverse(remove mold coz/sonbellek/1))
-            ]
-        ]
-    ] ilintile
 ] olsun
 
 "ortada olsun" [
