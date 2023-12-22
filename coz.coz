@@ -1,3 +1,11 @@
+"tara" [
+    [tara coz/sonbellek/1] ilintile
+] olsun
+
+"okuyup tara" [
+    []
+] olsun
+
 "cozut" [
     [
         print rejoin ["^[[0;35m" "cozuttu... " "^[[0;31m" coz/sonbellek/1 "^[[0m"]
