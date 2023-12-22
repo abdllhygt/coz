@@ -4,8 +4,8 @@ _harf: complement charset {"}
 _metin: [any _harf]
 
 _dizgi: [
-    {"} copy c_m _metin {"} ( 
-        SONBELLEKLE c_m ;append
+    copy c_m [{"} thru {"}] ( 
+        SONBELLEKLE (do c_m) ;append
         if (length? coz/durak) > 0 [
             durak_: copy coz/durak/1
             clear coz/durak
