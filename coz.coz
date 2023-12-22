@@ -13,29 +13,13 @@
 
 "giris_cikis.coz" okuyup tara
 "turler.coz" okuyup tara
+"matematik.coz" okuyup tara
 
 "cozut" [
     [
         print rejoin ["^[[0;35m" "cozuttu... " "^[[0;31m" coz/sonbellek/1 "^[[0m"]
     ] ilintile
     kapat
-] olsun
-
-"topla" [
-
-    [insert coz/sonbellek (coz/sonbellek/1 + coz/sonbellek/2)] ilintile
-] olsun
-
-"çıkar" [
-    [insert coz/sonbellek (coz/sonbellek/2 - coz/sonbellek/1)] ilintile
-] olsun
-
-"çarp" [
-    [insert coz/sonbellek (coz/sonbellek/1 * coz/sonbellek/2)] ilintile
-] olsun
-
-"böl" [
-    [insert coz/sonbellek (coz/sonbellek/2 / coz/sonbellek/1)] ilintile
 ] olsun
 
 "birleştir" [
