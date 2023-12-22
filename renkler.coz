@@ -1,0 +1,63 @@
+"siyah yazı" [
+    "^[[0;30m" bas
+] olsun
+
+"kırmızı yazı" [
+    "^[[0;31m" bas
+] olsun
+
+"yeşil yazı" [
+    "^[[0;32m" bas
+] olsun
+
+"sarı yazı" [
+    "^[[0;33m" bas
+] olsun
+
+"mavi yazı" [
+    "^[[0;34m" bas
+] olsun
+
+"pembe yazı" [
+    "^[[0;35m" bas
+] olsun
+
+"açık mavi yazı" [
+    "^[[0;36m" bas
+] olsun
+
+"sade yazı" [
+    "^[[0m" bas
+] olsun
+
+"siyah arkaplan" [
+    "^[[0;40m" bas
+] olsun
+
+"kırmızı arkaplan" [
+    "^[[0;41m" bas
+] olsun
+
+"yeşil arkaplan" [
+    "^[[0;42m" bas
+] olsun
+
+"sarı arkaplan" [
+    "^[[0;43m" bas
+] olsun
+
+"mavi arkaplan" [
+    "^[[0;44m" bas
+] olsun
+
+"pembe arkaplan" [
+    "^[[0;45m" bas
+] olsun
+
+"açık mavi arkaplan" [
+    "^[[0;46m" bas
+] olsun
+
+"sade arkaplan" [
+    "^[[0m" bas
+] olsun
