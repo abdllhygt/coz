@@ -5,14 +5,6 @@
     kapat
 ] olsun
 
-"yaz" [
-    [print coz/sonbellek/1] ilintile
-] olsun
-
-"oku" [
-    [insert/only coz/sonbellek _okunan: copy (ask "^[[0;31m> ^[[0;32m")] ilintile
-] olsun
-
 "sayı" [
     [
         either (type? coz/sonbellek/1) = float! [
