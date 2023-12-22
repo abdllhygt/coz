@@ -1,0 +1,59 @@
+"sayı" [
+    [
+        either (type? coz/sonbellek/1) = float! [
+            insert coz/sonbellek "doğru"
+        ][
+            insert coz/sonbellek "yanlış"
+        ]
+    ] ilintile
+] olsun
+
+"metin" [
+    [
+        either (type? coz/sonbellek/1) = string! [
+            insert coz/sonbellek "doğru"
+        ][
+            insert coz/sonbellek "yanlış"
+        ]
+    ] ilintile
+] olsun
+
+"küme" [
+    [
+        either (type? coz/sonbellek/1) = block! [
+            insert coz/sonbellek "doğru"
+        ][
+            insert coz/sonbellek "yanlış"
+        ]
+    ] ilintile
+] olsun
+
+"ikisi de sayı" [
+    [
+        either (((type? coz/sonbellek/1) = float!) = true ) = ((type? coz/sonbellek/2) = float!) [
+            insert coz/sonbellek "doğru"
+        ][
+            insert coz/sonbellek "yanlış"
+        ]
+    ] ilintile
+] olsun
+
+"ikisi de metin" [
+    [
+        either (((type? coz/sonbellek/1) = string!) = true ) = ((type? coz/sonbellek/2) = string!) [
+            insert coz/sonbellek "doğru"
+        ][
+            insert coz/sonbellek "yanlış"
+        ]
+    ] ilintile
+] olsun
+
+"ikisi de küme" [
+    [
+        either (((type? coz/sonbellek/1) = block!) = true ) = ((type? coz/sonbellek/2) = block!) [
+            insert coz/sonbellek "doğru"
+        ][
+            insert coz/sonbellek "yanlış"
+        ]
+    ] ilintile
+] olsun
