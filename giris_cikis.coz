@@ -13,3 +13,7 @@
 "dosyayı oku" [
     [read rejoin [% coz/sonbellek/1]] ilintile
 ] olsun
+
+"dosyaya yaz" [
+    [write rejoin [% coz/sonbellek/2] coz/sonbellek/1] ilintile
+] olsun
