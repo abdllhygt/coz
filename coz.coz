@@ -11,6 +11,12 @@
     tara
 ] olsun
 
+"ortada olsun" [
+    [
+        insert coz/ortac coz/sonbellek/1
+    ] ilintile
+] olsun
+
 "giris_cikis.coz" okuyup tara
 "turler.coz" okuyup tara
 "matematik.coz" okuyup tara
@@ -23,27 +29,5 @@
     ] ilintile
     kapat
 ] olsun
-
-"ortada olsun" [
-    [
-        insert coz/ortac coz/sonbellek/1
-    ] ilintile
-] olsun
-
-"ise" ortada olsun
-
-"olduğu sürece" [
-    [
-        _kosul: coz/sonbellek/2
-        _icerik: coz/sonbellek/1
-        tara reverse remove (reverse(remove mold _kosul))
-        while [(coz/sonbellek/1 = "yanlış") = false] [
-            tara reverse remove (reverse(remove mold _icerik))
-            tara reverse remove (reverse(remove mold _kosul))
-        ]
-    ] ilintile
-] olsun
-
-"olduğu sürece" ortada olsun
 
 0 0 0 0
