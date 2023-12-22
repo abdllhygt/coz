@@ -3,7 +3,7 @@
 ] olsun
 
 "dosyayı oku" [
-    [read rejoin [% coz/sonbellek/1]] ilintile
+    [read rejoin [%"" coz/sonbellek/1]] ilintile
 ] olsun
 
 "okuyup tara" [
