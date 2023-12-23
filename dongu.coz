@@ -10,4 +10,13 @@
     ] ilintile
 ] olsun
 
+"kere" [
+    [
+        loop coz/sonbellek/2 [
+            tara reverse remove (reverse(remove mold coz/sonbellek/1))
+        ]
+    ] ilintile
+] olsun
+
 "olduğu sürece" ortada olsun
+"kere" ortada olsun
