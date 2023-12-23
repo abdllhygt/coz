@@ -12,8 +12,9 @@
 
 "kere" [
     [
+        _icerik: coz/sonbellek/1
         loop coz/sonbellek/2 [
-            tara reverse remove (reverse(remove mold coz/sonbellek/1))
+            tara reverse remove (reverse(remove mold _icerik))
         ]
     ] ilintile
 ] olsun
