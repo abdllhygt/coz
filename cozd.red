@@ -2,6 +2,7 @@ Red [
     title: "Coz"
     author: "Abdullah Yiğiterol"
     version: 0.4.0
+    ;needs: 'view ;windowsta
 ]
 
 #include %red-common/search.red
