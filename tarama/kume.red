@@ -14,7 +14,7 @@ _kume: [
             ]
         "me"
     ] (
-        kume_: copy do c_k
+        kume_: copy do c_k ;burada kaldık
         insert/only coz/sonbellek kume_
         if (length? coz/sonbellek) > (coz/limit) [
             coz/sonbellek: reverse (remove reverse coz/sonbellek)
