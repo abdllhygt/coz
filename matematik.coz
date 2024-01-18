@@ -1,15 +1,15 @@
 "topla" kü
-    kü insert coz/sonbellek (coz/sonbellek/1 + coz/sonbellek/2) me ilintile
+    (insert coz/sonbellek (coz/sonbellek/1 + coz/sonbellek/2) );
 me olsun
 
 "çıkar" kü
-    kü insert coz/sonbellek (coz/sonbellek/2 - coz/sonbellek/1) me ilintile
+    (insert coz/sonbellek (coz/sonbellek/2 - coz/sonbellek/1) );
 me olsun
 
 "çarp" kü
-    kü insert coz/sonbellek (coz/sonbellek/1 * coz/sonbellek/2) me ilintile
+    (insert coz/sonbellek (coz/sonbellek/1 * coz/sonbellek/2) );
 me olsun
 
 "böl" kü
-    kü insert coz/sonbellek (coz/sonbellek/2 / coz/sonbellek/1) me ilintile
+    (insert coz/sonbellek (coz/sonbellek/2 / coz/sonbellek/1) );
 me olsun

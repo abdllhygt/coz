@@ -1,9 +1,9 @@
 "tara" kü
-    kü tara coz/sonbellek/1 me ilintile
+    (tara coz/sonbellek/1);
 me olsun
 
 "dosyayı oku" kü
-    kü insert coz/sonbellek (read rejoin [%"" coz/sonbellek/1]) me ilintile
+    (insert coz/sonbellek (read rejoin [%"" coz/sonbellek/1]));
 me olsun
 
 "okuyup tara" kü
@@ -12,9 +12,7 @@ me olsun
 me olsun
 
 "ortada olsun" kü
-    kü
-        insert coz/ortac coz/sonbellek/1
-    me ilintile
+    (insert coz/ortac coz/sonbellek/1);
 me olsun
 
 "giris_cikis.coz" okuyup tara
@@ -29,7 +27,7 @@ me olsun
     pembe yazı
     "cozuttu: " bas
     kırmızı yazı
-    kü print coz/sonbellek/4 me ilintile
+    (print coz/sonbellek/4);
     sade yazı
     kapat
 me olsun

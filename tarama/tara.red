@@ -19,7 +19,7 @@ tara: function[t [string!]][
             | _ata
             | _dizgi
             | _SAYI
-            | _ilintile
+            | _ilinti
             | _degisken
             | _bosluk
             | "kapat" (quit)

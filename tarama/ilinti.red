@@ -1,9 +1,9 @@
 Red []
 
-_ilintile: [
-    "ilintile" (
-        ilinti_: coz/sonbellek/1
-        remove coz/sonbellek
+_ilinti: [
+    "(" copy c_i thru ");" (
+        ilinti_: replace c_i ");" ""
         do ilinti_
+        ilinti_: copy ""
     )
 ]

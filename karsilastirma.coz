@@ -1,31 +1,31 @@
 "eşit" kü
-    kü
+    (
         either coz/sonbellek/1 = coz/sonbellek/2 [
             insert coz/sonbellek "doğru"
         ][
             insert coz/sonbellek "yanlış"
         ]
-    me ilintile
+    );
 me olsun
 
 "eşit değil" kü
-    kü
+    (
         either coz/sonbellek/1 = coz/sonbellek/2 [
             insert coz/sonbellek "yanlış"
         ][
             insert coz/sonbellek "doğru"
         ]
-    me ilintile
+    );
 me olsun
 
 "ise" kü
-    kü
+    (
         unless coz/sonbellek/2 = "yanlış" [
             if (type? coz/sonbellek/1) = block! [
                 tara reverse remove (reverse(remove mold coz/sonbellek/1))
             ]
         ]
-    me ilintile
+    );
 me olsun
 
 "ise" ortada olsun

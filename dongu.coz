@@ -1,5 +1,5 @@
 "olduğu sürece" kü
-    kü
+    (
         _kosul: coz/sonbellek/2
         _icerik: coz/sonbellek/1
         tara reverse remove (reverse(remove mold _kosul))
@@ -7,16 +7,16 @@
             tara reverse remove (reverse(remove mold _icerik))
             tara reverse remove (reverse(remove mold _kosul))
         ]
-    me ilintile
+    );
 me olsun
 
 "kere" kü
-    kü
+    (
         _icerik: coz/sonbellek/1
         loop coz/sonbellek/2 [
             tara reverse remove (reverse(remove mold _icerik))
         ]
-    me ilintile
+    );
 me olsun
 
 "olduğu sürece" ortada olsun
