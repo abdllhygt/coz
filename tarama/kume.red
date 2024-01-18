@@ -4,13 +4,15 @@ _harf: complement charset {"[]}
 _fume: ["kü" any [_harf | {"} thru {"} | _fume] "me"]
 
 _kume: [
-    copy c_k [
-        "kü" 
-            any [
-                _fume
-                ;"[" any [ _harf | {"} thru {"} | "[" any [_harf | {"} thru {"} | "[" thru "]"] "]"] "]"
-                | [{"} thru {"}]
-                | _harf
+    [
+        "kü"
+            copy c_k [ 
+                any [
+                    _fume
+                    ;"[" any [ _harf | {"} thru {"} | "[" any [_harf | {"} thru {"} | "[" thru "]"] "]"] "]"
+                    | [{"} thru {"}]
+                    | _harf
+                ]
             ]
         "me"
     ] (
