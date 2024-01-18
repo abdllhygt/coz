@@ -1,63 +1,63 @@
-"siyah yazı" [
+"siyah yazı" kü
     "^[[0;30m" bas
-] olsun
+me olsun
 
-"kırmızı yazı" [
+"kırmızı yazı" kü
     "^[[0;31m" bas
-] olsun
+me olsun
 
-"yeşil yazı" [
+"yeşil yazı" kü
     "^[[0;32m" bas
-] olsun
+me olsun
 
-"sarı yazı" [
+"sarı yazı" kü
     "^[[0;33m" bas
-] olsun
+me olsun
 
-"mavi yazı" [
+"mavi yazı" kü
     "^[[0;34m" bas
-] olsun
+me olsun
 
-"pembe yazı" [
+"pembe yazı" kü
     "^[[0;35m" bas
-] olsun
+me olsun
 
-"açık mavi yazı" [
+"açık mavi yazı" kü
     "^[[0;36m" bas
-] olsun
+me olsun
 
-"sade yazı" [
+"sade yazı" kü
     "^[[0m" bas
-] olsun
+me olsun
 
-"siyah arkaplan" [
+"siyah arkaplan" kü
     "^[[0;40m" bas
-] olsun
+me olsun
 
-"kırmızı arkaplan" [
+"kırmızı arkaplan" kü
     "^[[0;41m" bas
-] olsun
+me olsun
 
-"yeşil arkaplan" [
+"yeşil arkaplan" kü
     "^[[0;42m" bas
-] olsun
+me olsun
 
-"sarı arkaplan" [
+"sarı arkaplan" kü
     "^[[0;43m" bas
-] olsun
+me olsun
 
-"mavi arkaplan" [
+"mavi arkaplan" kü
     "^[[0;44m" bas
-] olsun
+me olsun
 
-"pembe arkaplan" [
+"pembe arkaplan" kü
     "^[[0;45m" bas
-] olsun
+me olsun
 
-"açık mavi arkaplan" [
+"açık mavi arkaplan" kü
     "^[[0;46m" bas
-] olsun
+me olsun
 
-"sade arkaplan" [
+"sade arkaplan" kü
     "^[[0m" bas
-] olsun
+me olsun

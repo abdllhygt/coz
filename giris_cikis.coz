@@ -1,15 +1,15 @@
-"yaz" [
-    [print coz/sonbellek/1] ilintile
-] olsun
+"yaz" kü
+    kü print coz/sonbellek/1 me ilintile
+me olsun
 
-"bas" [
-    [prin coz/sonbellek/1] ilintile
-] olsun
+"bas" kü
+    kü prin coz/sonbellek/1 me ilintile
+me olsun
 
-"oku" [
-    [insert/only coz/sonbellek _okunan: copy (ask "^[[0;31m> ^[[0;32m")] ilintile
-] olsun
+"oku" kü
+    kü insert/only coz/sonbellek _okunan: copy (ask "^[[0;31m> ^[[0;32m") me ilintile
+me olsun
 
-"dosyaya yaz" [
-    [write rejoin [% coz/sonbellek/2] coz/sonbellek/1] ilintile
-] olsun
+"dosyaya yaz" kü
+    kü write rejoin [% coz/sonbellek/2] coz/sonbellek/1 me ilintile
+me olsun

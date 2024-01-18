@@ -1,21 +1,21 @@
-"tara" [
-    [tara coz/sonbellek/1] ilintile
-] olsun
+"tara" kü
+    kü tara coz/sonbellek/1 me ilintile
+me olsun
 
-"dosyayı oku" [
-    [insert coz/sonbellek (read rejoin [%"" coz/sonbellek/1])] ilintile
-] olsun
+"dosyayı oku" kü
+    kü insert coz/sonbellek (read rejoin [%"" coz/sonbellek/1]) me ilintile
+me olsun
 
-"okuyup tara" [
+"okuyup tara" kü
     dosyayı oku
     tara
-] olsun
+me olsun
 
-"ortada olsun" [
-    [
+"ortada olsun" kü
+    kü
         insert coz/ortac coz/sonbellek/1
-    ] ilintile
-] olsun
+    me ilintile
+me olsun
 
 "giris_cikis.coz" okuyup tara
 "turler.coz" okuyup tara
@@ -25,13 +25,13 @@
 "renkler.coz" okuyup tara
 "dongu.coz" okuyup tara
 
-"cozut" [
+"cozut" kü
     pembe yazı
     "cozuttu: " bas
     kırmızı yazı
-    [print coz/sonbellek/4] ilintile
+    kü print coz/sonbellek/4 me ilintile
     sade yazı
     kapat
-] olsun
+me olsun
 
 0 0 0 0

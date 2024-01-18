@@ -1,16 +1,15 @@
-"topla" [
+"topla" kü
+    kü insert coz/sonbellek (coz/sonbellek/1 + coz/sonbellek/2) me ilintile
+me olsun
 
-    [insert coz/sonbellek (coz/sonbellek/1 + coz/sonbellek/2)] ilintile
-] olsun
+"çıkar" kü
+    kü insert coz/sonbellek (coz/sonbellek/2 - coz/sonbellek/1) me ilintile
+me olsun
 
-"çıkar" [
-    [insert coz/sonbellek (coz/sonbellek/2 - coz/sonbellek/1)] ilintile
-] olsun
+"çarp" kü
+    kü insert coz/sonbellek (coz/sonbellek/1 * coz/sonbellek/2) me ilintile
+me olsun
 
-"çarp" [
-    [insert coz/sonbellek (coz/sonbellek/1 * coz/sonbellek/2)] ilintile
-] olsun
-
-"böl" [
-    [insert coz/sonbellek (coz/sonbellek/2 / coz/sonbellek/1)] ilintile
-] olsun
+"böl" kü
+    kü insert coz/sonbellek (coz/sonbellek/2 / coz/sonbellek/1) me ilintile
+me olsun
