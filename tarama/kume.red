@@ -1,10 +1,10 @@
 Red []
 
 ;_harf: complement charset {"[]}
-_anahtar: ["ata" | "olsun" | "ilintile"]
-_isaret: charset "{}()[];.,_-+*/'!?&%$#"
+_anahtar: ["ata" | "olsun"]
+_isaret: charset "{}[];.,_-+*/'!?&%$#"
 _dizgi: [{"} thru {"}]
-_ilinti: ["(" thru ");"]
+_ilinti: ["(" thru ");"] ;hata burada olabilir
 
 _SAYI19: charset "123456789"
 _SAYI09: charset "0123456789"
@@ -15,20 +15,19 @@ _degisken: [(_AYRI_DEGISKEN: BLOK_AYIR coz/degisken/1) _AYRI_DEGISKEN]
 _bosluk: [some space]
 _satir: [newline | end | "^M" | "^/"]
 
-_fume: ["kü" any [_anahtar | _isaret | _dizgi | _ilinti | _sayi | _degisken | _bosluk | _satir | _fume ] "me"]
+_fume: ["kü" (probe "kü") any [_satir (probe "s")| _bosluk (probe "b") | _ilinti (probe "n") | _dizgi | _sayi | _degisken | _fume | _anahtar | _isaret] "me"]
 
-_kume: [
-    [
-        "kü"
-            copy c_k [ 
-                any [
-                    _anahtar | _isaret | _dizgi | _ilinti | _sayi | _degisken | _bosluk | _satir | _fume
-                ]
-            ]
-        "me"
-    ] (
-        c_k_: rejoin ["[" c_k "]"]
-        kume_: copy do c_k_ ;
+_kume: [ ;kümeyi düzgün taramıyor
+    copy c_k _fume ( probe "oldu"
+        c_k: copy remove c_k
+        c_k: copy remove c_k
+        c_k: copy reverse c_k
+        c_k: copy remove c_k
+        c_k: copy remove c_k
+        c_k: copy reverse c_k
+        c_k: copy rejoin ["[" c_k "]"]
+        kume_: copy do c_k
+        c_k: copy ""
         insert/only coz/sonbellek kume_
         if (length? coz/sonbellek) > (coz/limit) [
             coz/sonbellek: reverse (remove reverse coz/sonbellek)
