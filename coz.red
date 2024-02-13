@@ -13,9 +13,9 @@ ilk_g: system/options/args/1
 
 either ilk_g [
     either ilk_g = "test" [
-        tara read %test.coz true
+        tara_test read %test.coz
     ][
-        tara read %coz.coz false
+        tara read %coz.coz
         dosya: read/lines rejoin[%./ system/options/args/1]
         foreach d dosya [
             tara d

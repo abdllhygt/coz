@@ -28,7 +28,7 @@ kural_tablosu: [
 ]
 
 test_tablosu: [
-    any [
+    any [ (probe coz/sonbellek) ;buradayım
         _SATIR
         | _bosluk
         | _olsun
@@ -39,8 +39,12 @@ test_tablosu: [
     ]
 ]
 
-tara: function[t [string!] test_mi [logic!]][
-    either test_mi [
-        parse-trace t test_tablosu
-    ][ parse t kural_tablosu ]
+tara: function[t [string!]][
+    parse t kural_tablosu
+]
+
+tara_test: function[t [string!]][
+    parse
+    ;parse-trace
+    t test_tablosu
 ]

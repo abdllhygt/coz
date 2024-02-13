@@ -15,10 +15,10 @@ _degisken: [(_AYRI_DEGISKEN: BLOK_AYIR coz/degisken/1) _AYRI_DEGISKEN]
 _bosluk: [some space]
 _satir: [newline | end | "^M" | "^/"]
 
-_fume: ["kü" (probe "kü") any [_satir (probe "s")| _bosluk (probe "b") | _ilinti (probe "n") | _dizgi | _sayi | _degisken | _fume | _anahtar | _isaret] "me"]
+_fume: ["kü" any [_satir | _bosluk | _ilinti | _dizgi | _sayi | _degisken | _fume | _anahtar | _isaret] "me"]
 
-_kume: [ ;kümeyi düzgün taramıyor
-    copy c_k _fume ( probe "oldu"
+_kume: [
+    copy c_k _fume (
         c_k: copy remove c_k
         c_k: copy remove c_k
         c_k: copy reverse c_k
