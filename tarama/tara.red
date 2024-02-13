@@ -10,21 +10,25 @@ Red []
 #include %ilinti.red
 #include %ata.red
 
-tara: function[t [string!]][
-    parse t [
-        any [
-            _SATIR
-            | _kume
-            | _olsun
-            | _ata
-            | _dizgi
-            | _SAYI
-            | _ilinti
-            | _degisken
-            | _bosluk
-            | "kapat" (quit)
-            | "!" (coz/sonbellek: copy reverse (remove reverse coz/sonbellek))
-            | skip
-        ]
-    ]
+kural_tablosu: [
+    any [
+        _SATIR
+        _kume
+        | _olsun
+        | _ata
+        | _dizgi
+        | _SAYI
+        | _ilinti
+        | _degisken
+        | _bosluk
+        | "kapat" (quit)
+        | "!" (coz/sonbellek: copy reverse (remove reverse coz/sonbellek))
+        | skip
+    ]        
+]
+
+tara: function[t [string!] test_mi [logic!]][
+    either test_mi [
+        parse-trace t 
+    ][ parse t ]
 ]
