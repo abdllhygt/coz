@@ -1,5 +1,5 @@
 "tara" kü
-    (tara coz/sonbellek/1);
+    (tara coz/sonbellek/1 false);
 me olsun
 
 "dosyayı oku" kü
