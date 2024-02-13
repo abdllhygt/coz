@@ -13,7 +13,7 @@ Red []
 kural_tablosu: [
     any [
         _SATIR
-        _kume
+        | _kume
         | _olsun
         | _ata
         | _dizgi
@@ -27,8 +27,20 @@ kural_tablosu: [
     ]        
 ]
 
+test_tablosu: [
+    any [
+        _SATIR
+        | _bosluk
+        | _olsun
+        | _kume
+        | _dizgi
+        | _degisken
+        | skip
+    ]
+]
+
 tara: function[t [string!] test_mi [logic!]][
     either test_mi [
-        parse-trace t 
-    ][ parse t ]
+        parse-trace t test_tablosu
+    ][ parse t kural_tablosu ]
 ]
