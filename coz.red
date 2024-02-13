@@ -9,14 +9,20 @@ Red [
 #include %malzeme.red
 #include %tarama/tara.red
 
-tara read %coz.coz
+ilk_g: system/options/args/1
 
-either system/options/args/1 [
-    dosya: read/lines rejoin[%./ system/options/args/1]
-    foreach d dosya [
-        tara d
+either ilk_g [
+    either ilk_g = "test" [
+        tara read %test.coz true
+    ][
+        tara read %coz.coz false
+        dosya: read/lines rejoin[%./ system/options/args/1]
+        foreach d dosya [
+            tara d
+        ]
     ]
 ][
+    tara read %coz.coz false
     prin " Coz " print coz/versiyon print "^[[0;34m   2018-2023" print ""
     coz/SATIR: 0
     while [0 = 0] [
