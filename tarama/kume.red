@@ -1,21 +1,21 @@
 Red []
 
 ;_harf: complement charset {"[]}
-_anahtar: ["ata" | "olsun"]
-_isaret: charset "{}[];.,_-+*/'!?&%$#"
-_dizgi: [{"} thru {"}]
-_ilinti: ["(" thru ");"] ;hata burada olabilir
+_anahtar_: ["ata" | "olsun"]
+_isaret_: charset "{}[];.,_-+*/'!?&%$#"
+_dizgi_: [{"} thru {"}]
+_ilinti_: ["(" thru ".)"] ;hata burada olabilir
 
-_SAYI19: charset "123456789"
-_SAYI09: charset "0123456789"
-_sayi: [["0" | _SAYI19 any _SAYI09] "." any _SAYI09 | "0" | [_SAYI19 any _SAYI09]]
+_SAYI19_: charset "123456789"
+_SAYI09_: charset "0123456789"
+_sayi_: [["0" | _SAYI19 any _SAYI09] "." any _SAYI09 | "0" | [_SAYI19 any _SAYI09]]
 
-_degisken: [(_AYRI_DEGISKEN: BLOK_AYIR coz/degisken/1) _AYRI_DEGISKEN]
+_degisken_: [(_AYRI_DEGISKEN: BLOK_AYIR coz/degisken/1) _AYRI_DEGISKEN]
 
-_bosluk: [some space]
-_satir: [newline | end | "^M" | "^/"]
+_bosluk_: [some space]
+_satir_: [newline | end | "^M" | "^/"]
 
-_fume: ["kü" any [_satir | _bosluk | _ilinti | _dizgi | _sayi | _degisken | _fume | _anahtar | _isaret] "me"]
+_fume: ["kü" any [_satir_ | _bosluk_ | _ilinti_ | _dizgi_ | _sayi_ | _degisken_ | _fume_ | _anahtar_ | _isaret_] "me"]
 
 _kume: [
     copy c_k _fume (

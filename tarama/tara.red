@@ -30,6 +30,7 @@ kural_tablosu: [
 test_tablosu: [
     any [ (probe coz/sonbellek) ;buradayım
         _SATIR
+        ;| copy c_t [{"} thru {"}] (probe c_t)
         | _dizgi
         | _bosluk
         | _olsun
