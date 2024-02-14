@@ -4,7 +4,8 @@ _harf: complement charset {"}
 _metin: [any _harf]
 
 _dizgi: [
-    copy c_m [{"} thru {"}] ( probe c_m ;problemli
+    {"} copy c_m  thru {"} ( ;problemli
+        c_m: reverse remove reverse copy c_m
         SONBELLEKLE c_m ;append
         if (length? coz/durak) > 0 [
             durak_: copy coz/durak/1
