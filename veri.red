@@ -12,7 +12,7 @@ COZ: context [
 
     DURAK: []
 
-    SONBELLEK: []
+    SONBELLEK: ["yaz"]
 
     SATIR: 0
 

@@ -30,10 +30,10 @@ kural_tablosu: [
 test_tablosu: [
     any [ (probe coz/sonbellek) ;buradayım
         _SATIR
+        | _dizgi
         | _bosluk
         | _olsun
         | _kume
-        | _dizgi
         | _degisken
         | skip
     ]
