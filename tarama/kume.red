@@ -4,7 +4,7 @@ Red []
 _anahtar_: ["ata" | "olsun"]
 _isaret_: charset "{}[];.,_-+*/'!?&%$#"
 _dizgi_: [{"} thru {"}]
-_ilinti_: ["(" thru ".)"] ;hata burada olabilir
+_ilinti_: ["((" thru "))"] ;hata burada olabilir
 
 _SAYI19_: charset "123456789"
 _SAYI09_: charset "0123456789"
