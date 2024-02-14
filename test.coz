@@ -1,5 +1,1 @@
-"yaz" kü
-    (print coz/sonbellek/1.)
-me olsun
-
-"oldu" yaz
+(print "merhaba".)

@@ -35,6 +35,7 @@ test_tablosu: [
         | _olsun
         | _kume
         | _degisken
+        | _ilinti
         | skip
     ]
 ]
