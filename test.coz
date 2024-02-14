@@ -1,5 +1,5 @@
 "yaz" kü
-    (print coz/sonbellek/1);
+    (print coz/sonbellek/1.)
 me olsun
 
 "oldu" yaz
