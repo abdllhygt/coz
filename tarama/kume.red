@@ -15,7 +15,7 @@ _degisken_: [(_AYRI_DEGISKEN: BLOK_AYIR coz/degisken/1) _AYRI_DEGISKEN]
 _bosluk_: [some space]
 _satir_: [newline | end | "^M" | "^/"]
 
-_fume: ["kü" any [_satir_ | _bosluk_ | _ilinti_ | _dizgi_ | _sayi_ | _degisken_ | _fume_ | _anahtar_ | _isaret_] "me"]
+_fume: ["kü" any [_satir_ | _bosluk_ | _ilinti_ | _dizgi_ | _sayi_ | _degisken_ | _fume | _anahtar_ | _isaret_] "me"]
 
 _kume: [
     copy c_k _fume (
