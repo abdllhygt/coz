@@ -1,7 +1,7 @@
 Red []
 
 COZ: context [
-    VERSIYON: "0.4.test9"
+    VERSIYON: "0.4.test10"
 
     DEGISKEN: [
         ["z"]
@@ -12,7 +12,7 @@ COZ: context [
 
     DURAK: []
 
-    SONBELLEK: ["yaz"]
+    SONBELLEK: []
 
     SATIR: 0
 
